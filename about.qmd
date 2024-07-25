@@ -1,0 +1,49 @@
+---
+title: "About"
+title-block-banner: images/urban-cover-photo.png
+title-block-banner-color: white
+
+---
+
+# About
+This project was created as a resource for the editorial team for editing technical documentation. For more information, please reach out to [the editorial team](editorial@urban.org).
+
+## About the Author
+**Alex Dallman** is an editor and developer at the Urban Institute. Before working at Urban, she was the lead academic editor for TypeRight Editing. She received her BA in integrative physiology from the University of Colorado, Boulder, has completed editing courses from the University of Chicago Graham School, and received a graduate-level professional certificate in data analytics from the University of Oregon.
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+:::: columns
+::: {.column width="18%"}
+<img src="images/ui-logo-rgb.png" style="width:100%;" alt="UI Logo">
+<about-urban-text><br>
+500 L’Enfant Plaza SW<br>
+Washington, DC 20024<br>
+<a href="https://www.urban.org">www.urban.org</a>
+</about-urban-text>
+:::
+
+::: {.column width="50%"}
+:::{.no-spacing}
+<about-urban-heading-text> About the Urban Institute
+</about-urban-heading-text>
+<about-urban-text>The Urban Institute is a nonprofit research organization that provides data and evidence to help advance upward mobility and equity. We are a trusted source for changemakers who seek to strengthen decisionmaking, create inclusive economic growth, and improve the well-being of families and communities. For more than 50 years, Urban has delivered facts that inspire solutions—and this remains our charge today.</about-urban-text>
+
+::: no-indent
+<about-urban-text>Copyright © July 2024. Urban Institute. Permission is granted for reproduction of this file, with attribution to the Urban Institute.</about-urban-text>
+:::
+:::
+:::
+
+::: {.column width="32%"}
+
+:::
+::::
+
+
+

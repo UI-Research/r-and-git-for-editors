@@ -1,0 +1,38 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "R and Git for Editors"
+  sidebar:
+    style: "floating"
+    logo: images\ui-logo-rgb.png
+    logo-href: index.qmd
+    border: false
+    search: true
+    contents: /*
+
+
+format:
+  html:
+    theme: lux
+    css: styles.css
+    toc: false
+    notebook-links: false
+    page-layout: full
+    fig-cap-location: top
+    highlight-style: atom-one
+    code-block-bg: true 
+
+crossref:
+  custom:
+    - kind: float
+      key: box
+      reference-prefix: Box
+      caption-prefix: box
+      caption-location: top
+  fig-prefix: figure
+  tbl-prefix: table
+  tbl-title: Table 
+
+

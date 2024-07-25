@@ -1,0 +1,352 @@
+---
+format:
+  html:
+    css: styles.css
+    toc: true
+title: "Editing in Quarto"
+title-block-banner: images/urban-cover-photo.png
+title-block-banner-color: white
+execute:
+  echo: false
+  code-overflow: wrap
+---
+
+<!-- Front Matter -->
+
+<!-- Product Type -->
+
+<product-type-font-style>Toolkit</product-type-font-style>
+
+<!-- Title -->
+
+::: space-subtitle
+<index-title-font-style>R and Git for Editors</index-title-font-style>
+:::
+
+<!-- Subtitle -->
+
+::: decreased-space-subtitle
+<index-subtitle-font-style>A Guide for Editing Technical Digital Content</index-subtitle-font-style>
+:::
+
+<!-- Author -->
+
+::: space-author
+<author-font-style>Alex Dallman</author-font-style>
+:::
+
+<!-- Author Affiliation -->
+
+::: decreased-space-author-affiliation
+<author-affiliation-font-style>Urban Institute</author-affiliation-font-style>
+:::
+
+<!-- Date -->
+
+::: decreased-space-date
+<date-font-style>Last updated July 2024</date-font-style>
+:::
+
+<!--Buttons -->
+
+::: added-space
+::: flex-container
+<a href="about.qmd"> <button type="button" class="btn btn-primary">About the Project</button></a>
+:::
+:::
+
+<!-- End Front Matter -->
+
+<!-- Description -->
+
+::: added-space
+# Using This Resource
+
+Although the standard research product at Urban is still made with word processing software, research products genereated in other programs, like RStudio and its associated packages, are becoming more ubiquitous because of their clear advantages in chart and table generation, citation management, and reproducibility. This guide is for those navigating text, charts, tables, and graphics in RStudio and GitHub. It cuts through the technicalities to give you a practical approach to easily manuever through and edit files, which will streamline the production of technical documents while avoiding ever-too-common copy-and-paste errors.
+:::
+
+## What Are R, LaTeX, and Quarto?
+
+In research institutions like the Urban Institute, R, LaTeX, and Quarto are powerful tools used together or seperately to produce research products  efficiency, with reproducibility and presentation in mind. They are all opensource and free to the public at all levels. Described below is how each piece of the puzzle fits together.
+
+### R, RMarkdown, and RStudio
+
+#### R
+**R** is a programming language used for data analysis and visualization. It was created by statisticians to make the pipeline from raw data to clean visualization and analysis possible. 
+
+::: urban-list
+-   **Analyze data.** R helps researchers process and organize datasets, perform statistical analyses, and draw insights from the data.
+-   **Visualize results.** R can access different types of software or packages to perform different tasks, and one of those packages, ggplot2, allows researchers to create graphs and charts to visualize their findings without having to migrate the data to Excel and build the chart manually.
+:::
+
+Here’s an example of R code that loads in data and displays it:
+
+```{r r-example}
+#| echo: true
+#| code-overflow: wrap
+
+#This is a comment. In this line of code, I'm loading a dataset called mtcars.
+data(mtcars)
+
+#This line of code prints the first few rows of the mtcars dataset.
+head(mtcars)
+
+```
+
+#### RMarkdown
+**RMarkdown** is a tool that mixes regular text with R code. Think of it as a combination of a word processor and a programming tool that makes it easy to create dynamic and reproducible documents in various formats (PDF, HTML, or Word documents). 
+
+Below is an example of RMarkdown. Don't get caught up in exactly what it means, but do recognize the general syntax pattern.
+
+```{markdown example-2}
+#| echo: true
+#| code-overflow: wrap
+
+---
+title: "RMarkdown Example"
+author: "Your Name"
+date: 7/23/2024
+---
+
+# Introduction That Will Print in Heading 1 Style
+
+This is a simple example of an RMarkdown document.
+
+## Head of mtcars That Will Print in Heading 2 Style
+
+data(mtcars)
+head(mtcars)
+```
+
+#### RStudio
+**RStudio** is the downloadable software environment used to write code in R and RMarkdown. In RStudio, you can write in R, run code, and view plots all in one place. Think of it as the structure that allows you to use both R and RMarkdown in user-friendly way. See @fig-Rstudio below to get a sense of what working in RStudio looks like.
+
+<!-- Figure -->
+::: {#fig-Rstudio}
+::: no-indent
+<box-title-text>RStudio on Windows Desktop</box-title-text>
+![](images/r-studio.png){fig-align="left"}
+<source-note-text>**Source:** Author's screenshot.</source-note-text>
+:::
+:::
+
+<!-- Box -->
+
+::: space-before-box
+::: urban-box-borders
+::: {#box-about}
+::: no-indent
+<box-title-text>How R, RMarkdown, and RStudio Work Together</box-title-text>
+:::
+<p>When combined, these tools provide a powerful ecosystem for data analysis, visualization, and reporting.</p>
+
+::: urban-ordered-list
+1.  **R** is the engine that allows you to write and execute code for data analysis.
+2. **RStudio** is the environment where you develop and manage your R projects in an organized manner.
+3. **RMarkdown** is the format you use to create dynamic documents that include both text and R code, making it easy to share your findings in various formats.
+:::
+
+
+<!-- ::: urban-list
+-   Here's a bulleted list.
+-   It's in Urban style.
+    -   This is a secondary bullet.
+    -   This is also.
+:::
+
+::: urban-ordered-list 
+1. ordered list
+2. item 2
+    i) sub-item 1
+         A.  sub-sub-item 1
+:::
+
+
+::: no-indent
+<source-note-text>**Source:** This is a source.</source-note-text>
+::: -->
+
+<!-- ::: no-indent
+::: spacing-source-note
+<source-note-text>**Note:** This is a note.</source-note-text>
+:::
+::: -->
+:::
+:::
+:::
+
+For more information about R, visit Urban's Intro to R resource page [here](https://urbaninstitute.github.io/r-at-urban/intro-to-r.html).
+
+<!-- End Box -->
+
+
+### LaTeX
+
+LaTeX is a typesetting program using plain text with embedded formatting commands to produce high-quality products, usually in PDF format. It’s useful for scientific and technical writing because it handles complex formatting, like mathematical equations, bibliographies, and citations, more easily than traditional word-processing software. 
+
+#### LaTeX Vs. Word-Processing Software
+
+ Instead of clicking buttons to format your document like in word-processing software, you write plain text mixed with special commands that tell LaTeX how to format the text. This reduces formatting, citation, and numbering errors common while using word-processing software, although word-processing software has a much smalller learning curve than LaTeX.
+
+#### LaTeX Basics
+
+::: urban-ordered-list
+ 1. Open RStudio and install a LaTeX distribution. When using LaTeX in  
+ 2. Write the Document
+    i) Content is typically in plain text in a .tex file and includes commands to format text. See the example below:
+
+```{latex latex-example}
+#| echo: true
+#| code-overflow: wrap
+
+\documentclass{article}
+\begin{document}
+\title{My LaTeX Document}
+\author{John Doe}
+\maketitle
+\section{Introduction}
+This is a LaTeX document. I can write text and include formulas like \( E = mc^2 \).
+\end{document}
+
+```
+
+3. Run a LaTeX compiler program that reads the .tex file and processes it to produce a formatted PDF. The output is a clean, professional-looking document where all elements are perfectly placed, consistent, and properly formatted.
+    i) In this case, it will be the "knitr" compiler in RStudio.
+:::
+
+####  Resources
+For more information about LaTeX, visit the LaTeX site [here](https://www.latex-project.org/).Currently, [Overleaf](https://www.overleaf.com) is the most popular choice for editing LaTeX documents because it allows you to apply track changes easily in various files.
+
+### Quarto
+
+Quarto is awesome.
+
+For more information on the basics of R use at Urban, click [here](https://urbaninstitute.github.io/r-at-urban/intro-to-r.html). See @box-about for more information.
+
+## Summary
+
+
+
+<!-- Box -->
+
+<!-- ::: space-before-box
+::: urban-box-borders
+::: {#box-about}
+::: no-indent
+<box-title-text>Example Box</box-title-text>
+:::
+
+<p>This is just regular text in a box.</p>
+
+::: urban-list
+-   Here's a bulleted list.
+-   It's in Urban style.
+    -   This is a secondary bullet.
+    -   This is also.
+:::
+
+::: no-indent
+<source-note-text>**Source:** This is a source.</source-note-text>
+:::
+
+::: no-indent
+::: spacing-source-note
+<source-note-text>**Note:** This is a note.</source-note-text>
+:::
+:::
+:::
+:::
+::: -->
+
+<!-- End Box -->
+
+<!-- Pull Quote -->
+
+<!-- ::: pull-quote-borders
+::: no-indent
+<pull-quote-text>Here's a pull quote. Someone said something very important.<br> ---Author</pull-quote-text>
+:::
+::: -->
+
+<!-- End Pull Quote -->
+
+<!-- Tables -->
+<!-- ### Tables
+
+See @tbl-state-population. 
+
+
+```{r table-1-setup, include=FALSE}
+
+library(tidycensus)
+library(tidyverse)
+library(dplyr)
+library(knitr)
+library(kableExtra)
+library(scales)
+
+source("config.R")
+
+census_api_key(CENSUS_API_KEY, overwrite = TRUE, install = TRUE)
+
+census_data_example <- get_decennial(
+  geography = "state",
+  variables = c(
+    total_population = "P1_001N",
+    hispanic_or_latino = "P2_002N",
+    not_hispanic_or_latino = "P2_003N",
+    white_alone = "P2_005N",
+    black_or_african_american_alone = "P2_006N",
+    american_indian_and_alaska_native_alone = "P2_007N",
+    asian_alone = "P2_008N",
+    native_hawaiian_and_other_pacific_islander_alone = "P2_009N",
+    some_other_race_alone = "P2_010N",
+    two_or_more_races = "P2_011N"
+  ),
+  year = 2020
+)
+
+print(census_data_example)
+
+census_df_ethnicity <- census_data_example %>%
+  select(NAME, variable, value) %>%
+  spread(key = variable, value = value) %>%
+  rename(
+    "State" = NAME,
+    "Total Population" = total_population,
+    "Hispanic or Latino" = hispanic_or_latino,
+    "Not Hispanic or Latino" = not_hispanic_or_latino,
+    "White" = white_alone,
+    "Black or African American" = black_or_african_american_alone,
+    "American Indian and Alaska Native" = american_indian_and_alaska_native_alone,
+    "Asian" = asian_alone,
+    "Native Hawaiian and Other Pacific Islander"  = native_hawaiian_and_other_pacific_islander_alone,
+    "Other Race/Ethnicity" = some_other_race_alone,
+    "Two or More Races/Ethnitcites" = two_or_more_races
+  ) %>%
+  select("State", "Total Population", "Hispanic or Latino", "Not Hispanic or Latino","White", "Black or African American", "American Indian and Alaska Native", "Asian", "Native Hawaiian and Other Pacific Islander", "Other Race/Ethnicity", "Two or More Races/Ethnitcites")
+
+census_df_ethnicity <- census_df_ethnicity %>%
+  mutate(across(where(is.numeric), comma))
+
+```
+
+:::: {.tbl-cap #tbl-state-population}
+::: no-indent
+<box-title-text>Example Table</box-title-text>
+:::
+
+```{r tbl-state-population}
+kable(census_df_ethnicity)
+```
+::::
+::: no-indent
+<source-note-text>**Source:** This is a source.</source-note-text>
+:::
+
+::: no-indent
+::: spacing-source-note
+<source-note-text>**Note:** This is a note.</source-note-text>
+:::
+::: -->
+
