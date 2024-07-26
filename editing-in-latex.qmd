@@ -3,7 +3,7 @@ format:
   html:
     css: styles.css
     toc: true
-title: "Using GitHub"
+title: "Editing in Quarto"
 title-block-banner: images/urban-cover-photo.png
 title-block-banner-color: white
 execute:
@@ -11,6 +11,10 @@ execute:
   code-overflow: wrap
 ---
 
-# Using GitHub
+# Editing in LaTeX
 
-### How to Make Changes in GitHub Online
+### Common LaTeX Syntax
+
+### Editing Text in LaTeX
+
+#### How to Identify Changes in GitHub for Subsequent Edits
