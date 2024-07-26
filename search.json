@@ -1,0 +1,123 @@
+[
+  {
+    "objectID": "using-github.html",
+    "href": "using-github.html",
+    "title": "Using GitHub",
+    "section": "",
+    "text": "Using GitHub\n\nHow to Make Changes in GitHub Online",
+    "crumbs": [
+      "Using GitHub"
+    ]
+  },
+  {
+    "objectID": "editing-zotero-citations-in-r.html",
+    "href": "editing-zotero-citations-in-r.html",
+    "title": "Editing Zotero Citations in R",
+    "section": "",
+    "text": "Editing Zotero Citations in R\n\nZotero Integration in RMardown, LaTeX, and Quarto\n\n\nCommon Syntax",
+    "crumbs": [
+      "Editing Zotero Citations in R"
+    ]
+  },
+  {
+    "objectID": "editing-in-quarto.html",
+    "href": "editing-in-quarto.html",
+    "title": "Editing in Quarto",
+    "section": "",
+    "text": "Toolkit",
+    "crumbs": [
+      "Editing in Quarto"
+    ]
+  },
+  {
+    "objectID": "editing-in-quarto.html#what-are-r-latex-and-quarto",
+    "href": "editing-in-quarto.html#what-are-r-latex-and-quarto",
+    "title": "Editing in Quarto",
+    "section": "What Are R, LaTeX, and Quarto?",
+    "text": "What Are R, LaTeX, and Quarto?\nIn research institutions like the Urban Institute, R, LaTeX, and Quarto are powerful tools used together or seperately to produce research products efficiency, with reproducibility and presentation in mind. They are all opensource and free to the public at all levels. Described below is how each piece of the puzzle fits together.\n\nR, RMarkdown, and RStudio\n\nR\nR is a programming language used for data analysis and visualization. It was created by statisticians to make the pipeline from raw data to clean visualization and analysis possible.\n\n\nAnalyze data. R helps researchers process and organize datasets, perform statistical analyses, and draw insights from the data.\nVisualize results. R can access different types of software or packages to perform different tasks, and one of those packages, ggplot2, allows researchers to create graphs and charts to visualize their findings without having to migrate the data to Excel and build the chart manually.\n\n\nHere’s an example of R code that loads in data and displays it:\n\n#This is a comment. In this line of code, I'm loading a dataset called mtcars.\ndata(mtcars)\n\n#This line of code prints the first few rows of the mtcars dataset.\nhead(mtcars)\n\n                   mpg cyl disp  hp drat    wt  qsec vs am gear carb\nMazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4\nMazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4\nDatsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1\nHornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1\nHornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2\nValiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1\n\n\n\n\nRMarkdown\nRMarkdown is a tool that mixes regular text with R code. Think of it as a combination of a word processor and a programming tool that makes it easy to create dynamic and reproducible documents in various formats (PDF, HTML, or Word documents).\nBelow is an example of RMarkdown. Don’t get caught up in exactly what it means, but do recognize the general syntax pattern.\n\n---\ntitle: \"RMarkdown Example\"\nauthor: \"Your Name\"\ndate: 7/23/2024\n---\n\n# Introduction That Will Print in Heading 1 Style\n\nThis is a simple example of an RMarkdown document.\n\n## Head of mtcars That Will Print in Heading 2 Style\n\ndata(mtcars)\nhead(mtcars)\n\n\n\nRStudio\nRStudio is the downloadable software environment used to write code in R and RMarkdown. In RStudio, you can write in R, run code, and view plots all in one place. Think of it as the structure that allows you to use both R and RMarkdown in user-friendly way. See figure 1 below to get a sense of what working in RStudio looks like.\n\n\n\n\nFigure 1\n\n\n\nRStudio on Windows Desktop  Source: Author’s screenshot.\n\n\n\n\n\n\n\n\n\n\nBox 1\n\n\n\nHow R, RMarkdown, and RStudio Work Together\n\n\nWhen combined, these tools provide a powerful ecosystem for data analysis, visualization, and reporting.\n\n\n\nR is the engine that allows you to write and execute code for data analysis.\nRStudio is the environment where you develop and manage your R projects in an organized manner.\nRMarkdown is the format you use to create dynamic documents that include both text and R code, making it easy to share your findings in various formats.\n\n\n\n\n\n\n\n\n\nFor more information about R, visit Urban’s Intro to R resource page here.\n\n\n\n\nLaTeX\nLaTeX is a typesetting program using plain text with embedded formatting commands to produce high-quality products, usually in PDF format. It’s useful for scientific and technical writing because it handles complex formatting, like mathematical equations, bibliographies, and citations, more easily than traditional word-processing software.\n\nLaTeX Vs. Word-Processing Software\nInstead of clicking buttons to format your document like in word-processing software, you write plain text mixed with special commands that tell LaTeX how to format the text. This reduces formatting, citation, and numbering errors common while using word-processing software, although word-processing software has a much smalller learning curve than LaTeX.\n\n\nLaTeX Basics\n\n\nOpen RStudio and install a LaTeX distribution. When using LaTeX in\n\nWrite the Document\n\nContent is typically in plain text in a .tex file and includes commands to format text. See the example below:\n\n\n\n\\documentclass{article}\n\\begin{document}\n\\title{My LaTeX Document}\n\\author{John Doe}\n\\maketitle\n\\section{Introduction}\nThis is a LaTeX document. I can write text and include formulas like \\( E = mc^2 \\).\n\\end{document}\n\n\nRun a LaTeX compiler program that reads the .tex file and processes it to produce a formatted PDF. The output is a clean, professional-looking document where all elements are perfectly placed, consistent, and properly formatted.\n\nIn this case, it will be the “knitr” compiler in RStudio.\n\n\n\n\n\nResources\nFor more information about LaTeX, visit the LaTeX site here.Currently, Overleaf is the most popular choice for editing LaTeX documents because it allows you to apply track changes easily in various files.\n\n\n\nQuarto\nQuarto is awesome.\nFor more information on the basics of R use at Urban, click here. See box 1 for more information.",
+    "crumbs": [
+      "Editing in Quarto"
+    ]
+  },
+  {
+    "objectID": "editing-in-quarto.html#summary",
+    "href": "editing-in-quarto.html#summary",
+    "title": "Editing in Quarto",
+    "section": "Summary",
+    "text": "Summary",
+    "crumbs": [
+      "Editing in Quarto"
+    ]
+  },
+  {
+    "objectID": "editing-figures-in-r.html",
+    "href": "editing-figures-in-r.html",
+    "title": "Editing Figures in R",
+    "section": "",
+    "text": "Editing Figures in R\nEditing figures in R for Urban style can be done quite easily if you know what to look for. The first step is to ask the researcher for the r files associated with the project in a folder (usually an r project folder). The preferred method is opening a new branch on a GitHub repo. For more information on how to make a new branch on an existing repo, see the Using GitHub page. If the researcher only has a local folder saved, you can ask them to send you the zipped project folder via email.\nBefore you begin, make sure the researcher has used the urbnthemes ggplot2 package for generating the figures.\n\nOpening the R Project\nGo to RStudio on your desktop and open the R project via the zipped file or through GitHub. All of the files will open in RStudio in the side panel. Ask the researchers which file has the associated figure that needs editing. Also ask the researcher for the numbered lines of code, so you can navigate to the figure more easily.\n\n\n\n\nFigure 1\n\n\n\nRStudio Example  Source: Author’s screenshot. Notes: Highlighted in green are the numbered lines of code. Circled in orange is where you can see all the files in an R project.\n\n\n\n\n\n\nWhat to Look for in the File\nNext, you will need to find the figure that needs editing or formatting work. The researcher can point you to those lines of code. The key identifier to look out for is ggplot. The whole code chunk should look something like the block below, which when run, will produce an image like the one on the bottom of the code block.\n\n\nCode\nggplot(df_fig2_long, aes(x = Category, y = Value, fill = Series)) +\n  geom_bar(stat = \"identity\", position = position_dodge()) +\n  labs(y = \"Percent\", x = \"\", fill = \"\") +\n  scale_fill_discrete(labels = c('Current funding and participation', \n                                 'Full funding and participation in SSI, SNAP, WIC, TANF, CCDF, LIHEAP, and housing')) +\n  geom_text(aes(label = decimal_to_percentage(Value)), \n            vjust = -0.5, \n            position = position_dodge2(width = 0.7, padding = 0.5),\n            size = 2,\n            color = \"black\", \n            family = \"Lato\") +\n  scale_y_continuous(expand = expansion(mult = 0), \n                     limits = c(0, max(df_fig2_long$Value) * 1.5), \n                     labels = decimal_to_percentage) +\n  theme_bw() +\n  theme(legend.position = \"top\", \n        legend.justification = \"left\", \n        legend.margin = margin(t = -8), \n        plot.margin = unit(c(1, 0, 0, 0), \"lines\"), \n        axis.title.y = element_text(size = 7, family = \"Lato\", colour = \"black\"), \n        axis.text.x = element_text(size = 8, family = \"Lato\", colour = \"black\"), \n        axis.text.y = element_text(size = 8, family = \"Lato\", colour = \"black\"), \n        legend.text = element_text(size = 7), \n        legend.title = element_text(size = 7), \n        panel.border = element_blank(), \n        panel.grid.major = element_blank(),\n        panel.grid.minor = element_blank(), \n        axis.line = element_line(colour = \"black\")) +\n  guides(fill = guide_legend(title = \"\"))\n\n\n\n\n\n\n\n\n\nFor reference,here’s what the chart would look like if no theme or style parameters were applied:\n\n\nCode\nggplot(df_fig2_long, aes(x= Category, y = Value, fill = Series)) +\n  geom_bar(stat = \"identity\") + \n  labs(y = \"Percent\", x = \"\", fill = \"\")\n\n\n\n\n\n\n\n\n\n\n\nCommon Changes to Figures\nBelow you will find common changes that need to be made to figures and how to change them in RStudio.\n\nCapitalization and hypenation changes in data labels, legend text, and axis text\n\n\nColor changes for data labels, legend text, and axis text\n\n\nLow-quality exported images\n\n\nPositioning of legend\n\n\n\nProviding the Researchers with an Updated Figure",
+    "crumbs": [
+      "Editing Figures in R"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "This project was created as a resource for the editorial team for editing technical documentation. For more information, please reach out to the editorial team.\n\n\nAlex Dallman is an editor and developer at the Urban Institute. Before working at Urban, she was the lead academic editor for TypeRight Editing. She received her BA in integrative physiology from the University of Colorado, Boulder, has completed editing courses from the University of Chicago Graham School, and received a graduate-level professional certificate in data analytics from the University of Oregon.     \n\n\n  500 L’Enfant Plaza SW Washington, DC 20024 www.urban.org \n\n\n About the Urban Institute  The Urban Institute is a nonprofit research organization that provides data and evidence to help advance upward mobility and equity. We are a trusted source for changemakers who seek to strengthen decisionmaking, create inclusive economic growth, and improve the well-being of families and communities. For more than 50 years, Urban has delivered facts that inspire solutions—and this remains our charge today.\n\nCopyright © July 2024. Urban Institute. Permission is granted for reproduction of this file, with attribution to the Urban Institute.",
+    "crumbs": [
+      "About"
+    ]
+  },
+  {
+    "objectID": "about.html#about-the-author",
+    "href": "about.html#about-the-author",
+    "title": "About",
+    "section": "",
+    "text": "Alex Dallman is an editor and developer at the Urban Institute. Before working at Urban, she was the lead academic editor for TypeRight Editing. She received her BA in integrative physiology from the University of Colorado, Boulder, has completed editing courses from the University of Chicago Graham School, and received a graduate-level professional certificate in data analytics from the University of Oregon.     \n\n\n  500 L’Enfant Plaza SW Washington, DC 20024 www.urban.org \n\n\n About the Urban Institute  The Urban Institute is a nonprofit research organization that provides data and evidence to help advance upward mobility and equity. We are a trusted source for changemakers who seek to strengthen decisionmaking, create inclusive economic growth, and improve the well-being of families and communities. For more than 50 years, Urban has delivered facts that inspire solutions—and this remains our charge today.\n\nCopyright © July 2024. Urban Institute. Permission is granted for reproduction of this file, with attribution to the Urban Institute.",
+    "crumbs": [
+      "About"
+    ]
+  },
+  {
+    "objectID": "editing-in-latex.html",
+    "href": "editing-in-latex.html",
+    "title": "Editing in Quarto",
+    "section": "",
+    "text": "Editing in LaTeX\n\nCommon LaTeX Syntax\n\n\nEditing Text in LaTeX\n\nHow to Identify Changes in GitHub for Subsequent Edits",
+    "crumbs": [
+      "Editing in Quarto"
+    ]
+  },
+  {
+    "objectID": "editing-in-r-markdown.html",
+    "href": "editing-in-r-markdown.html",
+    "title": "Editing in R Markdown",
+    "section": "",
+    "text": "Editing in RMarkdown\n\nCommon RMarkdown Syntax\n\n\nEditing Text in RMarkdown\n\nHow to Identify Changes in GitHub for Subsequent Edits",
+    "crumbs": [
+      "Editing in R Markdown"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "R and GitHub for Editors",
+    "section": "",
+    "text": "Toolkit"
+  },
+  {
+    "objectID": "index.html#what-are-r-latex-quarto-and-github",
+    "href": "index.html#what-are-r-latex-quarto-and-github",
+    "title": "R and GitHub for Editors",
+    "section": "What Are R, LaTeX, Quarto, and GitHub?",
+    "text": "What Are R, LaTeX, Quarto, and GitHub?\nIn research institutions like the Urban Institute, R, LaTeX, Quarto, and GitHub are powerful tools used together or seperately to produce research products efficiency, with reproducibility and presentation in mind. They are all opensource to some degree and R, LaTeX, and Quarto are free to the public at all tiers. Described below is how each piece of the puzzle fits together. Let’s start by looking at figure 1.\n\n\n\n\nFigure 1\n\n\n\nHow R, RStudio, RMarkdown, LaTeX, Quarto, and GitHub Work Together\n\n\n\n\n\ngraph TD\n    A([RStudio]) --&gt;|IDE for R| B[R]\n    A --&gt;|Create Documents| C{RMarkdown}\n    A --&gt;|Creates HTML, Word, and PDFs with | D{Quarto}\n    B --&gt;|Used in| C\n    B --&gt;|Used in| D\n    C --&gt;|Used in| D\n    C --&gt;|Generates PDFs with| F{LaTeX}\n    A --&gt;|Version Control| E([GitHub])\n    C --&gt;|Shared via| E\n    D --&gt;|Shared via| E\n    F --&gt;|Shared via| E\n\n    subgraph Tools\n        A\n        B\n        C\n        D\n        F\n    end\n\n    subgraph Platforms\n        E\n    end\n\n\n\n\n\n\n\n\nSource: Author’s depiction.\n\n\n\n\n\n\nR, RMarkdown, and RStudio\n\nR\nR is a programming language used for data analysis and visualization. It was created by statisticians to make the pipeline from raw data to clean visualization and analysis possible.\n\n\nAnalyze data. R helps researchers process and organize datasets, perform statistical analyses, and draw insights from the data.\nVisualize results. R can access different types of software or packages to perform different tasks, and one of those packages, ggplot2, allows researchers to create graphs and charts to visualize their findings without having to migrate the data to Excel and build the chart manually.\n\n\nHere’s an example of R code that loads in data and displays it:\n\n#This is a comment. In this line of code, I'm loading a dataset called mtcars.\ndata(mtcars)\n\n#This line of code prints the first few rows of the mtcars dataset.\nhead(mtcars)\n\n                   mpg cyl disp  hp drat    wt  qsec vs am gear carb\nMazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4\nMazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4\nDatsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1\nHornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1\nHornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2\nValiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1\n\n\n\n\nRMarkdown\nRMarkdown is a tool that mixes regular text with R code. Think of it as a combination of a word processor and a programming tool that makes it easy to create dynamic and reproducible documents in various formats (PDF, HTML, or Word documents).\nBelow is an example of RMarkdown. Don’t get caught up in exactly what it means, but do recognize the general syntax pattern.\n\n---\ntitle: \"RMarkdown Example\"\nauthor: \"Your Name\"\ndate: 7/23/2024\n---\n\n# Introduction That Will Print in Heading 1 Style\n\nThis is a simple example of an RMarkdown document.\n\n## Head of mtcars That Will Print in Heading 2 Style\n\ndata(mtcars)\nhead(mtcars)\n\n\n\nRStudio\nRStudio is the downloadable software environment used to write code in R and RMarkdown. In RStudio, you can write in R, run code, and view plots all in one place. Think of it as the structure that allows you to use both R and RMarkdown in user-friendly way. See figure 2 below to get a sense of what working in RStudio looks like.\n\n\n\n\nFigure 2\n\n\n\nRStudio on Windows Desktop  Source: Author’s screenshot.\n\n\n\n\n\n\n\n\n\n\nBox 1\n\n\n\nHow R, RMarkdown, and RStudio Work Together\n\n\nWhen combined, these tools provide a powerful ecosystem for data analysis, visualization, and reporting.\n\n\n\nR is the engine that allows you to write and execute code for data analysis.\nRStudio is the environment where you develop and manage your R projects in an organized manner.\nRMarkdown is the format you use to create dynamic documents that include both text and R code, making it easy to share your findings in various formats.\n\n\n\n\n\n\n\n\n\nFor more information about R, visit Urban’s Intro to R resource page here.\n\n\n\n\nLaTeX\nLaTeX is a typesetting program using plain text with embedded formatting commands to produce high-quality products, usually in PDF format. It’s useful for scientific and technical writing because it handles complex formatting, like mathematical equations, bibliographies, and citations, more easily than traditional word-processing software.\n\nLaTeX Vs. Word-Processing Software\nInstead of clicking buttons to format your document like in word-processing software, you write plain text mixed with special commands that tell LaTeX how to format the text. This reduces formatting, citation, and numbering errors common while using word-processing software, although word-processing software has a much smalller learning curve than LaTeX.\n\n\nLaTeX Basics\n\n\nOpen RStudio and install a LaTeX distribution.\nWrite the Document.\n\nContent is typically in plain text in a .tex or .rmd file and includes commands to format text. See the example below:\n\n\n\n\\documentclass{article}\n\\begin{document}\n\\title{My LaTeX Document}\n\\author{John Doe}\n\\maketitle\n\\section{Introduction}\nThis is a LaTeX document. I can write text and include formulas like \\( E = mc^2 \\).\n\\end{document}\n\n\nRun a LaTeX compiler program that reads the .tex and .rmd files and processes them to produce a formatted PDF. The output is a professional-looking document in which all elements are perfectly placed, consistent, and properly formatted.\n\nIn this case, it will be the “knitr” compiler in RStudio.\n\n\n\n\n\nResources\nFor more information about LaTeX, visit the LaTeX site here. Currently, Overleaf is the most popular choice for editing LaTeX documents because it allows you to apply track changes easily in various files.\n\n\n\nQuarto\nQuarto is a tool that helps people create professional documents, presentations, websites, and more. It combines text, data, code, and graphics into a single, polished output.\n\n\nWriting Content\n\nQuarto uses Markdown, and RMarkdown in RStudio.\n\nCode and Data\n\nCode snippets from languages like R, Python, or Julia can allow users to embed data analysis directly within your document.\n\nRendering\n\nQuarto runs the code, captures the outputs (like graphs and tables), and formats everything according to your specifications, producing PDFs, HTML files, Word documents, PowerPoint presentations, and even websites.\n\n\n\n\nQuarto vs. LaTeX\nQuarto and LaTeX are similar, but there are key differences. See table 1 for more information.\n\n\n\nTable 1: Quarto vs. LaTeX\n\n\n\n\n\n\n\n\n\n\nFeature\nQuarto\nLaTeX\n\n\n\n\nEase of use\nEasier, uses Markdown\nMore difficult, uses LaTeX\n\n\nIntegration\nCombines text, code, and visualizations\nFocused on text and formatting\n\n\nOutput formats\nPDF, HTML, Word, PowerPoint\nPrimarily PDF\n\n\nCode embedding\nSupports embedding R, Python, Julia code\nRequires external tools for code integration\n\n\nCollaboration\nIntegrates with GitHub for version control\nCan be used with GitHub, but less integrated\n\n\nFlexibility\nGreat for interactive and static documents\nBest for static documents\n\n\n\n\n\n\n\n\nSource: Author’s analysis.\n\n\nTo understand more about Quarto, visit their website here.\n\n\n\nGitHub\nGitHub is a web-based platform used for collaborative software developmenta and version-control system that tracks changes in files and coordinates work on those files among multiple people.\n\nGitHub Basics\nResearchers and data scientists use GitHub throughout the lifecycle of a project to house all the various R, RMarkdown, LaTeX, and other associated files. It’s like Box but for more code-based work (but any type of file can be uploaded to GitHub).\n\n\nRepository (Repo). A repository is like a project’s folder on GitHub. It contains all the project files and the history of changes to those files.\nCommits. A commit is like a snapshot of a project, representing a set of changes made to the files in a repository.\nBranches. Branches allow users to work on different parts of a project separately. A branch can develop a new feature while the main branch contains the stable version of the project.\n\n\nSee figure 3 below.\n\n\n\n\nFigure 3\n\n\n\nExample GitHub Repository and Branching Structure\n\n\n\n\n\n%%{init: { 'logLevel': 'debug', 'theme': 'default' , 'themeVariables': {\n          'git0': '#1696d2',\n          'git1': '#fdbf11',\n          'git2': '#000000',\n          'git3': '#d2d2d2',\n          'git4': '#ec008b',\n          'git5': '#55b748',\n          'git6': '#5c5859',\n          'git7': '#db2b27'\n    } } }%%\n\ngitGraph\n   commit\n   commit\n   branch develop\n   checkout develop\n   commit\n   commit\n   checkout main\n   merge develop\n   commit\n   commit\n\n\n\n\n\n\n\n\nSource: “Gitgraph Diagrams,” Mermaid, accessed July 25, 2024, https://mermaid.js.org/syntax/gitgraph.html."
+  },
+  {
+    "objectID": "index.html#summary",
+    "href": "index.html#summary",
+    "title": "R and GitHub for Editors",
+    "section": "Summary",
+    "text": "Summary\nThe technologies metioned above are interconnected in the world of research, and having base knowledge of how these programs work can help editors better understand researchers’ workflow. To summarize all these concepts, let’s go through a real-world example of how these programs relate to one another.\n\n\nWrite R code in RStudio to analyze your data.\nDocument your analysis using RMarkdown, incorporating text and code.\nFormat the document using LaTeX for any complex equations or detailed formatting.\nTrack changes and collaborate with team members using GitHub, ensuring everyone works on the most recent version.\nCompile and publish your final report using Quarto, producing a document ready for publication.\n\n\nOn subsequent pages, you can learn more about how to edit files in different file formats in various programs."
+  }
+]

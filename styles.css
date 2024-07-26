@@ -1,0 +1,587 @@
+/* Global CSS Styles */
+
+/* Urban colors for reference */
+/* cyan: #1696d2
+gray: #d2d2d2
+yellow: #fdbf11
+pink: #ec008b
+green: #55b748
+dark gray: #5c5859
+red: #db2b27 */
+
+ /* Banner Styling  */
+ .quarto-title-banner {
+    margin-top: -10px;
+    margin-block-end: 1rem;
+    position: relative;
+    margin-bottom: 10px;
+    height: 50vh;
+}
+
+.quarto-title-block .quarto-title-banner {
+    display: flex;
+    align-items: flex-end;
+}
+
+/* Make the text on the banner transparent */
+.quarto-title > h1.title {
+    opacity: 0 !important;
+}
+
+
+
+
+/* Basic Margin and Alignment Styling */
+.added-space {
+    margin-bottom: 20px;
+}
+
+.no-spacing {
+    margin-bottom: 0rem !important;
+}
+
+.left-align {
+    text-align: left;
+}
+
+.flex-container {
+    display: flex;
+    gap: 10px;
+}
+
+.decreased-space-author-affiliation {
+    margin-top: -1.55em;
+}
+
+.decreased-space-subtitle {
+    margin-top: -1em;
+}
+
+.decreased-space-date {
+    margin-top: -1em;
+}
+
+.space-title {
+    margin-top: 2em;
+}
+
+.space-author {
+    margin-top: 0em;
+}
+
+.no-indent {
+    text-indent: 0 !important;
+}
+
+
+
+
+/* Secondary Nav Bar Styling */
+.quarto-banner nav.quarto-secondary-nav {
+    background-color: #000000;
+    color: #ffffff;
+    border-top: 1px solid rgba(0, 0, 0, .05);
+    }
+
+.quarto-secondary-nav nav.quarto-page-breadcrumbs {
+    color: #ffffff;
+    }
+
+.quarto-secondary-nav .quarto-btn-toggle {
+    color: rgb(255, 255, 255);
+    }
+
+
+
+
+/* Font Styling */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet');
+
+
+h1 {
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 0px;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2.5em;
+    text-transform: none !important;
+    color: #1696d2 !important;  
+}
+
+h2 {
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 0px;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.75em;
+    text-transform: none !important;
+    color: #000000 !important;  
+    border-bottom: none !important;
+    margin-top: 3em;
+}
+
+
+h3 {
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 0px;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 1.25em;
+    text-transform: none !important;
+    color: #000000 !important;  
+    border-bottom: none !important;
+    margin-top: 3em;
+}
+
+h4 {
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 0px;
+    font-weight: 700;
+    font-style:normal;
+    font-size: 1em;
+    text-transform: uppercase !important;
+    color: #808080 !important;  
+    border-bottom: none !important;
+    margin-top: 2em !important;
+}
+
+h5 { 
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 0px;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 1em;
+    text-transform: none !important;
+    color: #000000 !important;  
+    border-bottom: none !important;
+    margin-top: 1em !important;
+  }
+
+h6 {
+    font-family: 'Lato', sans-serif;
+  }
+
+body {
+    font-family: 'Lato', sans-serif;
+  }
+
+p:first-of-type {
+    text-indent: 0;
+  }
+
+p {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  color: #000000;
+  text-indent: 1.25em;
+}
+
+a {
+  color: #0A4C6A;
+  text-decoration: none;
+}
+
+/* Fonts for front matter */
+product-type-font-style {
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 5px;
+    font-weight: 900;
+    font-style: normal;
+    font-size: medium;
+    text-transform: uppercase !important;
+    color: #1696d2 !important;
+    text-indent: none !important;  
+}
+
+index-title-font-style {
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 0px;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 4em;
+    text-transform: none !important;
+    color: #000000 !important; 
+    text-indent: none !important; 
+}
+
+/* Make sure to use with subtitle decreased spacing to get the correct spacing b/w author and author affiliation style */
+index-subtitle-font-style {
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 0px;
+    font-weight: 700;
+    font-style: normal;
+    font-size: x-large;
+    text-transform: none !important;
+    color: #1696d2 !important;
+    line-height: 0em;
+    text-indent: none !important;  
+}
+
+author-font-style {
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 0px;
+    font-style: italic !important;
+    font-weight: 400 !important;
+    font-style: normal;
+    font-size: large;
+    color: #000000 !important;
+    line-height: 0em !important; 
+    text-indent: none !important; 
+}
+
+/* Make sure to use with author affiliation decreased spacing to get the correct spacing b/w author and author affiliation style */
+author-affiliation-font-style {
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 2px;
+    font-weight: 400 !important;
+    font-style: normal;
+    font-size: 0.55em;
+    text-transform: uppercase !important;
+    color: #000000 !important; 
+    text-indent: none !important;
+}
+
+date-font-style {
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 0px;
+    font-style: italic !important;
+    font-weight: 400 !important;
+    font-style: normal;
+    font-size: large;
+    color: #9d9d9d !important;
+    line-height: 2em !important; 
+    text-indent: none !important; 
+}
+
+text-center {
+    text-align: center!important;
+}
+
+
+/* Fonts for about page */
+about-urban-text {
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 0px;
+    font-style: none !important;
+    font-weight: 400 !important;
+    font-style: normal;
+    font-size: 0.7em;
+    text-transform: none !important;
+    color: #000000 !important;
+    line-height: 1em !important; 
+    text-indent: none !important;
+    margin-bottom: 0px !important;
+    display: block;
+}
+
+about-urban-heading-text {
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 3px;
+    font-weight: 700;
+    font-style: normal;
+    font-size: medium;
+    text-transform: uppercase !important;
+    color: #1696d2 !important;
+    text-indent: none !important;
+    margin-bottom: 0rem !important;  
+}
+
+
+
+
+/* Pull Quote Styling */
+
+pull-quote-text {
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 0px;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 1.5em;
+    text-transform: none !important;
+    color: #1696d2 !important;
+    text-indent: 0 !important;
+}
+
+.pull-quote-borders {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-top-style:solid;
+    border-bottom-style:solid;
+    border-color:#1696d2;
+    padding-top: 10px;
+}
+
+
+
+
+/* Ordered List Styling */
+.urban-ordered-list ol {
+    list-style-type: decimal !important; 
+    left: 20px !important;
+    position: relative; 
+    font-family: 'Lato', sans-serif;
+    color: black;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1em;
+}
+
+.urban-ordered-list ol::before { 
+    padding-left: 50px !important;
+}
+
+.urban-ordered-list ol ol {
+    list-style-type: lower-alpha !important; 
+    position: relative; 
+    font-family: 'Lato', sans-serif;
+    color: black;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1em;
+  }
+
+.urban-ordered-list ol ol li::before { 
+    left: -20px !important;
+    color: black;
+}
+
+.urban-ordered-list ol ol ol {
+    list-style-type: lower-roman !important; 
+    position: relative; 
+    font-family: 'Lato', sans-serif;
+    color: black;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1em;
+}
+
+.urban-ordered-list ol ol ol li::before { 
+    left: -20px !important;
+    color: black;
+}
+  
+
+
+
+
+/* Unordered List Styling */
+.urban-list ul {
+    list-style: none !important; 
+    padding-left: 20px !important;
+}
+
+.urban-list ul li {
+    position: relative; 
+    font-family: 'Lato', sans-serif;
+    color: black;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1em;
+    left: 40px;
+  }
+  
+.urban-list ul li::before {
+    content: "\25A0"; 
+    position: absolute; 
+    left: -20px; 
+    color: #1696d2;
+    top: 0.4em;
+    font-size: 0.65em; 
+    line-height: 1em;
+}
+
+.urban-list ul ul{
+    list-style: none !important; 
+}
+
+.urban-list ul ul li {
+    position: relative; 
+    font-family: 'Lato', sans-serif;
+    color: black;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1em;
+    left: 20px !important;
+  }
+  
+.urban-list ul ul li::before {
+    content: "\00BB"; 
+    position: absolute; 
+    left: -20px !important;
+    color: black;
+    top: 0.4em;
+    font-size: 0.75em; 
+    line-height: 1em;
+}
+
+
+
+
+/* Table, Box, Figure, Etc. Numbering Styling */
+.panel-caption, .figure-caption, .subfigure-caption, .table-caption, figcaption, caption {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 0.75em !important;
+    text-transform: uppercase !important;
+    color: #1696d2 !important;
+    text-indent: 0 !important; 
+}
+
+
+
+
+/* Box Styling */
+.space-before-box {
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.urban-box-borders {
+    border-bottom: 10px solid #D9D9D9; 
+    padding-bottom: 10px;
+    border-top: 10px solid #D9D9D9;
+    padding-top: 10px;
+  }
+
+  box-number-text {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: medium;
+    text-transform: uppercase !important;
+    color: #1696d2 !important;
+    text-indent: 0 !important;  
+}
+
+.spacing-box-number {
+    margin-top: -1em;
+}
+
+box-title-text {
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 0px;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 1em;
+    text-transform: none !important;
+    color: #000000 !important;  
+    border-bottom: none !important;
+    text-indent: 0 !important;
+    display: block;
+}
+
+source-note-text {
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 0px;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 0.65em;
+    text-transform: none !important;
+    color: #000000 !important;  
+    border-bottom: none !important;
+    text-indent: 0 !important;
+    display: block;
+}
+
+
+/* Mermaid Diagram Styling */
+:root {
+    --mermaid-bg-color: #d2d2d2;
+    --mermaid-edge-color: #d2d2d2;
+    --mermaid-node-fg-color: #fff;
+    --mermaid-fg-color: #fff;
+    --mermaid-fg-color--lighter: #fff;
+    --mermaid-fg-color--lightest: #fff;
+    --mermaid-font-family: 'Lato', sans-serif;
+    --mermaid-label-bg-color: #d2d2d2;
+    --mermaid-label-fg-color: #000;
+    --mermaid-node-bg-color: #1696d2;
+    --mermaid-node-fg-color: #1696d2;
+  }
+
+
+
+
+/* Figure Styling */
+.quarto-figure {
+    margin-bottom: 0px;
+    margin-top: 8px;
+}
+
+
+
+
+  /* Table Styling */
+  *make table font size smaller */
+.table {
+    font-size: 0.7em !important;
+    width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+  figure.quarto-float-tbl figcaption.quarto-float-caption-top {
+    margin-top: .5rem;
+    margin-bottom: .25rem;
+    text-align: left;
+    display: block;
+}
+
+.table-title {
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 0px;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 1em;
+    text-transform: none !important;
+    color: #000000 !important;  
+    border-bottom: none !important;
+    text-indent: 0 !important;
+    display: block;
+}
+
+table tr {
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 0px;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1em;
+    text-transform: none !important;
+    color: #000000 !important;  
+    text-indent: 0 !important;
+    text-align:left;
+}
+
+table td {
+    padding: 0.2rem !important;
+    vertical-align: top;
+}
+
+
+table tr:last-child td {
+    border-bottom: 1px solid black;
+  }
+
+table th {
+    border-bottom: 2px solid black;
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 0px;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 1em;
+    text-transform: none !important;
+    color: #000000 !important;  
+    text-indent: 0 !important;
+    text-align:center;
+    vertical-align: bottom;
+    padding-bottom: 0rem !important;
+    padding-top: 0.75rem !important;
+    padding-left: 0rem !important;
+    padding-right: 0rem !important;
+  }
+
+.decreased-top-margin-table-note {
+    margin-top:-1rem;
+}
+
