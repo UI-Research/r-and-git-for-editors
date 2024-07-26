@@ -223,6 +223,8 @@ background-size: cover;
   <ul class="collapse">
   <li><a href="#opening-the-r-project" id="toc-opening-the-r-project" class="nav-link" data-scroll-target="#opening-the-r-project">Opening the R Project</a></li>
   <li><a href="#what-to-look-for-in-the-file" id="toc-what-to-look-for-in-the-file" class="nav-link" data-scroll-target="#what-to-look-for-in-the-file">What to Look for in the File</a></li>
+  <li><a href="#common-changes-to-figures" id="toc-common-changes-to-figures" class="nav-link" data-scroll-target="#common-changes-to-figures">Common Changes to Figures</a></li>
+  <li><a href="#providing-the-researchers-with-an-updated-figure" id="toc-providing-the-researchers-with-an-updated-figure" class="nav-link" data-scroll-target="#providing-the-researchers-with-an-updated-figure">Providing the Researchers with an Updated Figure</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -261,31 +263,35 @@ Figure&nbsp;1
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r code-overflow-scroll number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">ggplot</span>(df_fig2_long, <span class="fu">aes</span>(<span class="at">x=</span> Category, <span class="at">y =</span> Value, <span class="at">fill =</span> Series)) <span class="sc">+</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position=</span><span class="fu">position_dodge</span>()) <span class="sc">+</span></span>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r code-overflow-scroll number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">ggplot</span>(df_fig2_long, <span class="fu">aes</span>(<span class="at">x =</span> Category, <span class="at">y =</span> Value, <span class="at">fill =</span> Series)) <span class="sc">+</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="fu">position_dodge</span>()) <span class="sc">+</span></span>
 <span id="cb1-3"><a href="#cb1-3"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Percent"</span>, <span class="at">x =</span> <span class="st">""</span>, <span class="at">fill =</span> <span class="st">""</span>) <span class="sc">+</span></span>
-<span id="cb1-4"><a href="#cb1-4"></a>  <span class="fu">scale_fill_discrete</span>(<span class="at">labels=</span><span class="fu">c</span>(<span class="st">'Current funding and participation'</span>, </span>
-<span id="cb1-5"><a href="#cb1-5"></a>                               <span class="st">'Full funding and participation in SSI, SNAP, WIC, TANF, CCDF, LIHEAP, and housing'</span>)) <span class="sc">+</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a>  <span class="fu">scale_fill_discrete</span>(<span class="at">labels =</span> <span class="fu">c</span>(<span class="st">'Current funding and participation'</span>, </span>
+<span id="cb1-5"><a href="#cb1-5"></a>                                 <span class="st">'Full funding and participation in SSI, SNAP, WIC, TANF, CCDF, LIHEAP, and housing'</span>)) <span class="sc">+</span></span>
 <span id="cb1-6"><a href="#cb1-6"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">decimal_to_percentage</span>(Value)), </span>
-<span id="cb1-7"><a href="#cb1-7"></a>            <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.3</span>, <span class="at">position =</span> <span class="fu">position_dodge2</span>(<span class="at">width =</span> <span class="fl">0.7</span>, <span class="at">padding =</span> <span class="fl">0.5</span>)) <span class="sc">+</span></span>
-<span id="cb1-8"><a href="#cb1-8"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb1-9"><a href="#cb1-9"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"top"</span>, </span>
-<span id="cb1-10"><a href="#cb1-10"></a>        <span class="at">legend.justification =</span> <span class="st">"left"</span>, </span>
-<span id="cb1-11"><a href="#cb1-11"></a>        <span class="at">legend.margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="sc">-</span><span class="dv">8</span>), </span>
-<span id="cb1-12"><a href="#cb1-12"></a>        <span class="at">plot.margin =</span> <span class="fu">unit</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), <span class="st">"lines"</span>), </span>
-<span id="cb1-13"><a href="#cb1-13"></a>        <span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">7</span>, <span class="at">family=</span><span class="st">"Lato"</span>, <span class="at">colour =</span> <span class="st">"black"</span>), </span>
-<span id="cb1-14"><a href="#cb1-14"></a>        <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">8</span>, <span class="at">family=</span><span class="st">"Lato"</span>, <span class="at">colour =</span> <span class="st">"black"</span>), </span>
-<span id="cb1-15"><a href="#cb1-15"></a>        <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">8</span>, <span class="at">family=</span><span class="st">"Lato"</span>, <span class="at">colour =</span> <span class="st">"black"</span>), </span>
-<span id="cb1-16"><a href="#cb1-16"></a>        <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">7</span>), </span>
-<span id="cb1-17"><a href="#cb1-17"></a>        <span class="at">legend.title =</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">7</span>), </span>
-<span id="cb1-18"><a href="#cb1-18"></a>        <span class="at">panel.border =</span> <span class="fu">element_blank</span>(), </span>
-<span id="cb1-19"><a href="#cb1-19"></a>        <span class="at">panel.grid.major =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb1-20"><a href="#cb1-20"></a>        <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(), </span>
-<span id="cb1-21"><a href="#cb1-21"></a>        <span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">colour =</span> <span class="st">"black"</span>)) <span class="sc">+</span></span>
-<span id="cb1-22"><a href="#cb1-22"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">expand =</span> <span class="fu">expansion</span>(<span class="at">mult =</span> <span class="dv">0</span>), </span>
-<span id="cb1-23"><a href="#cb1-23"></a>                     <span class="at">limits=</span><span class="fu">c</span>(<span class="dv">0</span>, <span class="fu">max</span>(df_fig2_long<span class="sc">$</span>Value)<span class="sc">*</span><span class="fl">1.5</span>), </span>
-<span id="cb1-24"><a href="#cb1-24"></a>                     <span class="at">labels =</span> decimal_to_percentage) <span class="sc">+</span></span>
-<span id="cb1-25"><a href="#cb1-25"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_legend</span>(<span class="at">title =</span> <span class="st">""</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-7"><a href="#cb1-7"></a>            <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.5</span>, </span>
+<span id="cb1-8"><a href="#cb1-8"></a>            <span class="at">position =</span> <span class="fu">position_dodge2</span>(<span class="at">width =</span> <span class="fl">0.7</span>, <span class="at">padding =</span> <span class="fl">0.5</span>),</span>
+<span id="cb1-9"><a href="#cb1-9"></a>            <span class="at">size =</span> <span class="dv">2</span>,</span>
+<span id="cb1-10"><a href="#cb1-10"></a>            <span class="at">color =</span> <span class="st">"black"</span>, </span>
+<span id="cb1-11"><a href="#cb1-11"></a>            <span class="at">family =</span> <span class="st">"Lato"</span>) <span class="sc">+</span></span>
+<span id="cb1-12"><a href="#cb1-12"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">expand =</span> <span class="fu">expansion</span>(<span class="at">mult =</span> <span class="dv">0</span>), </span>
+<span id="cb1-13"><a href="#cb1-13"></a>                     <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fu">max</span>(df_fig2_long<span class="sc">$</span>Value) <span class="sc">*</span> <span class="fl">1.5</span>), </span>
+<span id="cb1-14"><a href="#cb1-14"></a>                     <span class="at">labels =</span> decimal_to_percentage) <span class="sc">+</span></span>
+<span id="cb1-15"><a href="#cb1-15"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb1-16"><a href="#cb1-16"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"top"</span>, </span>
+<span id="cb1-17"><a href="#cb1-17"></a>        <span class="at">legend.justification =</span> <span class="st">"left"</span>, </span>
+<span id="cb1-18"><a href="#cb1-18"></a>        <span class="at">legend.margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="sc">-</span><span class="dv">8</span>), </span>
+<span id="cb1-19"><a href="#cb1-19"></a>        <span class="at">plot.margin =</span> <span class="fu">unit</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), <span class="st">"lines"</span>), </span>
+<span id="cb1-20"><a href="#cb1-20"></a>        <span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">7</span>, <span class="at">family =</span> <span class="st">"Lato"</span>, <span class="at">colour =</span> <span class="st">"black"</span>), </span>
+<span id="cb1-21"><a href="#cb1-21"></a>        <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">8</span>, <span class="at">family =</span> <span class="st">"Lato"</span>, <span class="at">colour =</span> <span class="st">"black"</span>), </span>
+<span id="cb1-22"><a href="#cb1-22"></a>        <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">8</span>, <span class="at">family =</span> <span class="st">"Lato"</span>, <span class="at">colour =</span> <span class="st">"black"</span>), </span>
+<span id="cb1-23"><a href="#cb1-23"></a>        <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">7</span>), </span>
+<span id="cb1-24"><a href="#cb1-24"></a>        <span class="at">legend.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">7</span>), </span>
+<span id="cb1-25"><a href="#cb1-25"></a>        <span class="at">panel.border =</span> <span class="fu">element_blank</span>(), </span>
+<span id="cb1-26"><a href="#cb1-26"></a>        <span class="at">panel.grid.major =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb1-27"><a href="#cb1-27"></a>        <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(), </span>
+<span id="cb1-28"><a href="#cb1-28"></a>        <span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">colour =</span> <span class="st">"black"</span>)) <span class="sc">+</span></span>
+<span id="cb1-29"><a href="#cb1-29"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_legend</span>(<span class="at">title =</span> <span class="st">""</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -295,6 +301,41 @@ Figure&nbsp;1
 </div>
 </div>
 </div>
+<p>For reference,here’s what the chart would look like if no theme or style parameters were applied:</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r code-overflow-scroll number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">ggplot</span>(df_fig2_long, <span class="fu">aes</span>(<span class="at">x=</span> Category, <span class="at">y =</span> Value, <span class="at">fill =</span> Series)) <span class="sc">+</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>) <span class="sc">+</span> </span>
+<span id="cb2-3"><a href="#cb2-3"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Percent"</span>, <span class="at">x =</span> <span class="st">""</span>, <span class="at">fill =</span> <span class="st">""</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="editing-figures-in-r_files/figure-html/chart-ggplot-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="common-changes-to-figures" class="level3">
+<h3 class="anchored" data-anchor-id="common-changes-to-figures">Common Changes to Figures</h3>
+<p>Below you will find common changes that need to be made to figures and how to change them in RStudio.</p>
+<section id="capitalization-and-hypenation-changes-in-data-labels-legend-text-and-axis-text" class="level4">
+<h4 class="anchored" data-anchor-id="capitalization-and-hypenation-changes-in-data-labels-legend-text-and-axis-text">Capitalization and hypenation changes in data labels, legend text, and axis text</h4>
+</section>
+<section id="color-changes-for-data-labels-legend-text-and-axis-text" class="level4">
+<h4 class="anchored" data-anchor-id="color-changes-for-data-labels-legend-text-and-axis-text">Color changes for data labels, legend text, and axis text</h4>
+</section>
+<section id="low-quality-exported-images" class="level4">
+<h4 class="anchored" data-anchor-id="low-quality-exported-images">Low-quality exported images</h4>
+</section>
+<section id="positioning-of-legend" class="level4">
+<h4 class="anchored" data-anchor-id="positioning-of-legend">Positioning of legend</h4>
+</section>
+</section>
+<section id="providing-the-researchers-with-an-updated-figure" class="level3">
+<h3 class="anchored" data-anchor-id="providing-the-researchers-with-an-updated-figure">Providing the Researchers with an Updated Figure</h3>
 
 
 </section>

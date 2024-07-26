@@ -63,14 +63,14 @@ execute:
 ::: added-space
 # Using This Resource
 
-Although the standard research product at Urban is still made with word processing software, research products genereated in other programs, like RStudio and its associated packages, are becoming more ubiquitous because of their clear advantages in chart and table generation, citation management, and reproducibility. This guide is for those navigating text, charts, tables, and graphics in RStudio and GitHub. It cuts through the technicalities to give you a practical approach to easily manuever through and edit files, which will streamline the production of technical documents while avoiding ever-too-common copy-and-paste errors.
+Although the standard research product at Urban is still made with word-processing software, research products genereated in other programs, like RStudio and its associated packages, are becoming more ubiquitous because of their clear advantages in chart and table generation, citation management, and reproducibility. This guide is for those navigating text, charts, tables, and graphics in RStudio and GitHub. It cuts through the technicalities to give you a practical approach to easily manuever through and edit files, which will streamline the production of technical documents while avoiding ever-too-common copy-and-paste errors.
 
 On this page, you will find an introduction to the various software and programming languages used at Urban to give you brief, relevant background information. For a direct how-to guide on using any of these programs in the context of editing, see the menu to navigate to the page you are looking for.
 :::
 
 ## What Are R, LaTeX, Quarto, and GitHub?
 
-In research institutions like the Urban Institute, R, LaTeX, and Quarto are powerful tools used together or seperately to produce research products  efficiency, with reproducibility and presentation in mind. They are all opensource and free to the public at all levels. Described below is how each piece of the puzzle fits together. Let's start by looking at @fig-flowchart-1.
+In research institutions like the Urban Institute, R, LaTeX, Quarto, and GitHub are powerful tools used together or seperately to produce research products  efficiency, with reproducibility and presentation in mind. They are all opensource to some degree and R, LaTeX, and Quarto are free to the public at all tiers. Described below is how each piece of the puzzle fits together. Let's start by looking at @fig-flowchart-1.
 
 <!-- Figure -->
 ::: {#fig-flowchart-1}

@@ -36,6 +36,7 @@ Go to RStudio on your desktop and open the R project via the zipped file or thro
 
 Next, you will need to find the figure that needs editing or formatting work. The researcher can point you to those lines of code. The key identifier to look out for is <code>ggplot</code>. The whole code chunk should look something like the block below, which when run, will produce an image like the one on the bottom of the code block.
 
+
 ```{r chart-setup}
 #| include: false
 #| echo: false
@@ -51,6 +52,7 @@ library(kableExtra)
 library(ggplot2)
 library(dplyr)
 library(scales)
+library(extrafont)
 
 category <- c("All people", "Children\nunder age 18", "Adults\nages 18–64", "Adults\nages 65 and older")
 
@@ -85,33 +87,73 @@ decimal_to_percentage <- function(x) {
 #| code-fold: show
 #| code-line-numbers: true
 
-ggplot(df_fig2_long, aes(x= Category, y = Value, fill = Series)) +
-  geom_bar(stat = "identity", position=position_dodge()) +
+ggplot(df_fig2_long, aes(x = Category, y = Value, fill = Series)) +
+  geom_bar(stat = "identity", position = position_dodge()) +
   labs(y = "Percent", x = "", fill = "") +
-  scale_fill_discrete(labels=c('Current funding and participation', 
-                               'Full funding and participation in SSI, SNAP, WIC, TANF, CCDF, LIHEAP, and housing')) +
+  scale_fill_discrete(labels = c('Current funding and participation', 
+                                 'Full funding and participation in SSI, SNAP, WIC, TANF, CCDF, LIHEAP, and housing')) +
   geom_text(aes(label = decimal_to_percentage(Value)), 
-            vjust = -0.3, position = position_dodge2(width = 0.7, padding = 0.5)) +
+            vjust = -0.5, 
+            position = position_dodge2(width = 0.7, padding = 0.5),
+            size = 2,
+            color = "black", 
+            family = "Lato") +
+  scale_y_continuous(expand = expansion(mult = 0), 
+                     limits = c(0, max(df_fig2_long$Value) * 1.5), 
+                     labels = decimal_to_percentage) +
   theme_bw() +
   theme(legend.position = "top", 
         legend.justification = "left", 
         legend.margin = margin(t = -8), 
         plot.margin = unit(c(1, 0, 0, 0), "lines"), 
-        axis.title.y = element_text(size = 7, family="Lato", colour = "black"), 
-        axis.text.x = element_text(size = 8, family="Lato", colour = "black"), 
-        axis.text.y = element_text(size = 8, family="Lato", colour = "black"), 
-        legend.text = element_text(size=7), 
-        legend.title = element_text(size=7), 
+        axis.title.y = element_text(size = 7, family = "Lato", colour = "black"), 
+        axis.text.x = element_text(size = 8, family = "Lato", colour = "black"), 
+        axis.text.y = element_text(size = 8, family = "Lato", colour = "black"), 
+        legend.text = element_text(size = 7), 
+        legend.title = element_text(size = 7), 
         panel.border = element_blank(), 
         panel.grid.major = element_blank(),
         panel.grid.minor = element_blank(), 
         axis.line = element_line(colour = "black")) +
-  scale_y_continuous(expand = expansion(mult = 0), 
-                     limits=c(0, max(df_fig2_long$Value)*1.5), 
-                     labels = decimal_to_percentage) +
   guides(fill = guide_legend(title = ""))
 
 ```
+
+For reference,here's what the chart would look like if no theme or style parameters were applied:
+
+```{r chart-ggplot-2}
+#| echo: true
+#| code-overflow: scroll
+#| code-fold: show
+#| code-line-numbers: true
+#| warning: false
+
+ggplot(df_fig2_long, aes(x= Category, y = Value, fill = Series)) +
+  geom_bar(stat = "identity") + 
+  labs(y = "Percent", x = "", fill = "")
+```
+
+
+
+
+
+
+### Common Changes to Figures
+
+Below you will find common changes that need to be made to figures and how to change them in RStudio. 
+
+#### Capitalization and hypenation changes in data labels, legend text, and axis text
+
+#### Color changes for data labels, legend text, and axis text
+
+#### Low-quality exported images
+
+#### Positioning of legend
+
+
+### Providing the Researchers with an Updated Figure
+
+
 
 
 
