@@ -3,7 +3,7 @@ format:
   html:
     css: styles.css
     toc: true
-title: "Editing in Quarto"
+title: "Editing in LaTeX"
 title-block-banner: images/urban-cover-photo.png
 title-block-banner-color: white
 execute:
