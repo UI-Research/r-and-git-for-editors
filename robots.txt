@@ -1,1 +1,1 @@
-Sitemap: https://alexdallman1029.github.io/r-and-git-for-editors/sitemap.xml
+Sitemap: https://UI-Research.github.io/r-and-git-for-editors/sitemap.xml
