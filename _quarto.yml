@@ -24,6 +24,9 @@ format:
     highlight-style: atom-one
     code-block-bg: true 
 
+filters:
+  - line-highlight
+
 crossref:
   custom:
     - kind: float

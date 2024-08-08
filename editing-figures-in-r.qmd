@@ -34,7 +34,7 @@ Go to RStudio on your desktop and open the R project via the zipped file or thro
 
 ### What to Look for in the File
 
-Next, you will need to find the figure that needs editing or formatting work. The researcher can point you to those lines of code. The key identifier to look out for is <code>ggplot</code>. The whole code chunk should look something like the block below, which when run, will produce an image like the one on the bottom of the code block.
+Next, you will need to find the figure that requires editing or formatting work. The researcher can point you to those lines of code. The key identifier to look out for is <code>ggplot</code>. Figure 1 below is a fully formatted figure using <code>urbnthemes</code> and custom formatting parameters in <code>ggplot</code>. If you toggle to figure 2, you'll see <code>ggplot</code> and <code>urbnthemes</code> was used without custom parameters. Code for the associated figures can be found in the tabset below the figures. Take note of the extra code it takes to customize a figure when toggling between tabs.
 
 
 ```{r chart-setup}
@@ -81,10 +81,68 @@ decimal_to_percentage <- function(x) {
 
 ```
 
-```{r chart-ggplot}
+::: {.panel-tabset}
+## Figure 1
+```{r ggplot-chart}
+
+#With custom parameters applied
+
+ggplot(df_fig2_long, aes(x = Category, y = Value, fill = Series)) +
+  geom_bar(stat = "identity", position = position_dodge()) +
+  labs(y = "Percent", x = "", fill = "") +
+  scale_fill_discrete(labels = c('Current funding and participation', 
+                                 'Full funding and participation in SSI, SNAP, WIC, TANF, CCDF, LIHEAP, and housing')) +
+  geom_text(aes(label = decimal_to_percentage(Value)), 
+            vjust = -0.5, 
+            position = position_dodge2(width = 0.7, padding = 0.5),
+            size = 2,
+            color = "black", 
+            family = "Lato") +
+  scale_y_continuous(expand = expansion(mult = 0), 
+                     limits = c(0, max(df_fig2_long$Value) * 1.5), 
+                     labels = decimal_to_percentage) +
+  theme_bw() +
+  theme(legend.position = "top", 
+        legend.justification = "left", 
+        legend.margin = margin(t = -8), 
+        plot.margin = unit(c(1, 0, 0, 0), "lines"), 
+        axis.title.y = element_text(size = 7, family = "Lato", colour = "black"), 
+        axis.text.x = element_text(size = 8, family = "Lato", colour = "black"), 
+        axis.text.y = element_text(size = 8, family = "Lato", colour = "black"), 
+        legend.text = element_text(size = 7), 
+        legend.title = element_text(size = 7), 
+        panel.border = element_blank(), 
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(), 
+        axis.line = element_line(colour = "black")) +
+  guides(fill = guide_legend(title = ""))
+
+```
+
+## Figure 2
+
+```{r ggplot-chart-2}
+
+#| warning: false
+
+#Without custom parameters applied
+
+ggplot(df_fig2_long, aes(x= Category, y = Value, fill = Series)) +
+  geom_bar(stat = "identity") + 
+  labs(y = "Percent", x = "", fill = "")
+```
+
+:::
+
+
+
+::: {.panel-tabset}
+
+## Figure 1 code
+```{r ggplot-chart-code}
 #| echo: true
+#| eval: false
 #| code-overflow: scroll
-#| code-fold: show
 #| code-line-numbers: true
 
 ggplot(df_fig2_long, aes(x = Category, y = Value, fill = Series)) +
@@ -119,12 +177,12 @@ ggplot(df_fig2_long, aes(x = Category, y = Value, fill = Series)) +
 
 ```
 
-For reference,here's what the chart would look like if no theme or style parameters were applied:
+## Figure 2 code
 
-```{r chart-ggplot-2}
+```{r ggplot-chart-code-2}
 #| echo: true
+#| eval: false
 #| code-overflow: scroll
-#| code-fold: show
 #| code-line-numbers: true
 #| warning: false
 
@@ -133,25 +191,90 @@ ggplot(df_fig2_long, aes(x= Category, y = Value, fill = Series)) +
   labs(y = "Percent", x = "", fill = "")
 ```
 
-
-
-
-
+:::
 
 ### Common Changes to Figures
 
-Below you will find common changes that need to be made to figures and how to change them in RStudio. 
+Below you will find common changes for figures and how to make those changes.
 
 #### Capitalization and hypenation changes in data labels, legend text, and axis text
 
+To change capitalization, hyphenation, or other text changes in legend and axis text, look at the example code again, this time with the proper text highlighted. 
+
+::: {.panel-tabset}
+## Legend text
+```{r ggplot-chart-code-legend}
+#| echo: true
+#| eval: false
+#| code-overflow: scroll
+#| code-line-numbers: true
+#| source-line-numbers: "2,6-7"
+
+ggplot(df_fig2_long, aes(x = Category, y = Value, fill = Series)) +
+  geom_bar(stat = "identity", position = position_dodge()) +
+  labs(y = "Percent", x = "", fill = "") +
+  scale_fill_discrete(labels = c('Current funding and participation', 
+                                 'Full funding and participation in SSI, SNAP, WIC, TANF, CCDF, LIHEAP, and housing')) +
+  geom_text(aes(label = decimal_to_percentage(Value)), 
+            vjust = -0.5, 
+            position = position_dodge2(width = 0.7, padding = 0.5),
+            size = 2,
+            color = "black", 
+            family = "Lato") +
+  scale_y_continuous(expand = expansion(mult = 0), 
+                     limits = c(0, max(df_fig2_long$Value) * 1.5), 
+                     labels = decimal_to_percentage) +
+  theme_bw() +
+  theme(legend.position = "top", 
+        legend.justification = "left", 
+        legend.margin = margin(t = -8), 
+        plot.margin = unit(c(1, 0, 0, 0), "lines"), 
+        axis.title.y = element_text(size = 7, family = "Lato", colour = "black"), 
+        axis.text.x = element_text(size = 8, family = "Lato", colour = "black"), 
+        axis.text.y = element_text(size = 8, family = "Lato", colour = "black"), 
+        legend.text = element_text(size = 7), 
+        legend.title = element_text(size = 7), 
+        panel.border = element_blank(), 
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(), 
+        axis.line = element_line(colour = "black")) +
+  guides(fill = guide_legend(title = ""))
+
+```
+
+## Figure 2
+
+```{r ggplot-chart-legend-2}
+
+#| warning: false
+
+#Without custom parameters applied
+
+ggplot(df_fig2_long, aes(x= Category, y = Value, fill = Series)) +
+  geom_bar(stat = "identity") + 
+  labs(y = "Percent", x = "", fill = "")
+```
+
+:::
+
+
 #### Color changes for data labels, legend text, and axis text
+
+To change data labels,
 
 #### Low-quality exported images
 
+If the images in a report generated in R are not high-enough quality for print publications, you can change the parameters by using the following code:
+
+
 #### Positioning of legend
+
+#### Removing grid lines
 
 
 ### Providing the Researchers with an Updated Figure
+
+One you have made the appropriate changes, you can export the file using the following code. Make sure the resolution is good enough for print publications (the resolution below should work).
 
 
 
