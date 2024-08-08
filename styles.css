@@ -181,6 +181,14 @@ a {
   text-decoration: none;
 }
 
+code {
+    font-size: 0.875em;
+    color: #1696d2 !important;
+    background-color: #f8f9fa;
+    padding: .125rem .25rem;
+    word-wrap: break-word;
+}
+
 /* Fonts for front matter */
 product-type-font-style {
     font-family: 'Lato', sans-serif;
