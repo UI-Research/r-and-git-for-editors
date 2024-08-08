@@ -1,7 +1,7 @@
 ---
 format:
   html:
-    css: tyles.css
+    css: styles.css
     toc: false
 title: "R and GitHub for Editors"
 title-block-banner: images/urban-cover-photo.png
