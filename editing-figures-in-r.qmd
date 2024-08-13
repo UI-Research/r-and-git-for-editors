@@ -13,7 +13,7 @@ execute:
 
 # Editing Figures in R
 
-Editing figures in R for Urban style can be done quite easily if you know what to look for. The first step is to ask the researcher for the r files associated with the project in a folder (usually an r project folder). The preferred method is opening a new branch on a GitHub repo. For more information on how to make a new branch on an existing repo, see the [Using GitHub](using-github.qmd) page. If the researcher only has a local folder saved, you can ask them to send you the zipped project folder via email.
+Editing figures in R for Urban style can be done quite easily if you know what to look for. The first step is to ask the researcher for the R files associated with the project in a folder (usually an R project folder). The preferred method is opening a new branch on a GitHub repo. For more information on how to make a new branch on an existing repo, see the [Using GitHub](using-github.qmd) page. If the researcher only has a local folder saved, you can ask them to send you the zipped project folder via email.
 
 Before you begin, make sure the researcher has used the [urbnthemes ggplot2 package](https://urbaninstitute.github.io/urbnthemes/) for generating the figures. 
 
@@ -91,7 +91,7 @@ ggplot(df_fig2_long, aes(x = Category, y = Value, fill = Series)) +
   geom_bar(stat = "identity", position = position_dodge()) +
   labs(y = "Percent", x = "", fill = "") +
   scale_fill_discrete(labels = c('Current funding and participation', 
-                                 'Full funding and participation in SSI, SNAP, WIC, TANF, CCDF, LIHEAP, and housing')) +
+  'Full funding and participation in SSI, SNAP, WIC, TANF, CCDF, LIHEAP, and housing')) +
   geom_text(aes(label = decimal_to_percentage(Value)), 
             vjust = -0.5, 
             position = position_dodge2(width = 0.7, padding = 0.5),
@@ -134,8 +134,6 @@ ggplot(df_fig2_long, aes(x= Category, y = Value, fill = Series)) +
 
 :::
 
-
-
 ::: {.panel-tabset}
 
 ## Figure 1 code
@@ -149,7 +147,7 @@ ggplot(df_fig2_long, aes(x = Category, y = Value, fill = Series)) +
   geom_bar(stat = "identity", position = position_dodge()) +
   labs(y = "Percent", x = "", fill = "") +
   scale_fill_discrete(labels = c('Current funding and participation', 
-                                 'Full funding and participation in SSI, SNAP, WIC, TANF, CCDF, LIHEAP, and housing')) +
+  'Full funding and participation in SSI, SNAP, WIC, TANF, CCDF, LIHEAP, and housing')) +
   geom_text(aes(label = decimal_to_percentage(Value)), 
             vjust = -0.5, 
             position = position_dodge2(width = 0.7, padding = 0.5),
@@ -199,22 +197,20 @@ Below you will find common changes for figures and how to make those changes.
 
 #### Capitalization and hypenation changes in data labels, legend text, and axis text
 
-To change capitalization, hyphenation, or other text changes in legend and axis text, look at the example code again, this time with the proper text highlighted. 
+To change capitalization, hyphenation, or other text changes in legend and axis text, look at the example code again, this time with the relevant text highlighted. If some of the chart text gets pulled in from the dataset itself, ask the researchers to make the required changes. 
 
-::: {.panel-tabset}
-## Legend text
 ```{r ggplot-chart-code-legend}
 #| echo: true
 #| eval: false
 #| code-overflow: scroll
 #| code-line-numbers: true
-#| source-line-numbers: "2,6-7"
+#| source-line-numbers: "3-5"
 
 ggplot(df_fig2_long, aes(x = Category, y = Value, fill = Series)) +
   geom_bar(stat = "identity", position = position_dodge()) +
   labs(y = "Percent", x = "", fill = "") +
   scale_fill_discrete(labels = c('Current funding and participation', 
-                                 'Full funding and participation in SSI, SNAP, WIC, TANF, CCDF, LIHEAP, and housing')) +
+  'Full funding and participation in SSI, SNAP, WIC, TANF, CCDF, LIHEAP, and housing')) +
   geom_text(aes(label = decimal_to_percentage(Value)), 
             vjust = -0.5, 
             position = position_dodge2(width = 0.7, padding = 0.5),
@@ -242,39 +238,284 @@ ggplot(df_fig2_long, aes(x = Category, y = Value, fill = Series)) +
 
 ```
 
-## Figure 2
+You can change the text for <code>labs(y = "Y AXIS LABEL HERE", x = "X AXIS LABEL HERE", fill = "")</code> and <code>labels = c("SERIES 1 LABEL", 
+"SERIES 2 LABEL")</code>
 
+#### Color and position changes for chart text
+
+Highlighted below are lines of code associated with data labels and axis text. If you need to change the styling of those, look for similar lines of code. The text has been converted to different colors to make the changes more apparent. You can also use hex codes in place of colors (especially useful for Urban-sepcific colors) like this <code>"#1696d2"</code>. Notice in the same lines of code, you can change the font style and font size.
+
+Also notice that the last line of code is highlighted to show the addition of a legend title.
+
+::: {.panel-tabset}
+
+## Code
+```{r ggplot-chart-code-legend-2}
+#| echo: true
+#| eval: false
+#| code-overflow: scroll
+#| code-line-numbers: true
+#| source-line-numbers: "9-11,20-24,29"
+
+ggplot(df_fig2_long, aes(x = Category, y = Value, fill = Series)) +
+  geom_bar(stat = "identity", position = position_dodge()) +
+  labs(y = "Percent", x = "", fill = "") +
+  scale_fill_discrete(labels = c('Current funding and participation', 
+  'Full funding and participation in SSI, SNAP, WIC, TANF, CCDF, LIHEAP, and housing')) +
+  geom_text(aes(label = decimal_to_percentage(Value)), 
+            vjust = -0.5, 
+            position = position_dodge2(width = 0.7, padding = 0.5),
+            size = 5,
+            color = "red", 
+            family = "Lato") +
+  scale_y_continuous(expand = expansion(mult = 0), 
+                     limits = c(0, max(df_fig2_long$Value) * 1.5), 
+                     labels = decimal_to_percentage) +
+  theme_bw() +
+  theme(legend.position = "top", 
+        legend.justification = "left", 
+        legend.margin = margin(t = -8), 
+        plot.margin = unit(c(1, 0, 0, 0), "lines"), 
+        axis.title.y = element_text(size = 7, family = "Lato", colour = "green"), 
+        axis.text.x = element_text(size = 8, family = "Lato", colour = "blue"), 
+        axis.text.y = element_text(size = 8, family = "Lato", colour = "orange"), 
+        legend.text = element_text(size = 7, family = "Lato", colour = "yellow"), 
+        legend.title = element_text(size = 7, family = "Lato", colour = "purple"), 
+        panel.border = element_blank(), 
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(), 
+        axis.line = element_line(colour = "black")) +
+  guides(fill = guide_legend(title = "Example Title Here"))
+
+```
+
+## Figure
 ```{r ggplot-chart-legend-2}
 
-#| warning: false
+ggplot(df_fig2_long, aes(x = Category, y = Value, fill = Series)) +
+  geom_bar(stat = "identity", position = position_dodge()) +
+  labs(y = "Percent", x = "", fill = "") +
+  scale_fill_discrete(labels = c('Current funding and participation', 
+  'Full funding and participation in SSI, SNAP, WIC, TANF, CCDF, LIHEAP, and housing')) +
+  geom_text(aes(label = decimal_to_percentage(Value)), 
+            vjust = -0.5, 
+            position = position_dodge2(width = 0.7, padding = 0.5),
+            size = 2,
+            color = "red", 
+            family = "Lato") +
+  scale_y_continuous(expand = expansion(mult = 0), 
+                     limits = c(0, max(df_fig2_long$Value) * 1.5), 
+                     labels = decimal_to_percentage) +
+  theme_bw() +
+  theme(legend.position = "top", 
+        legend.justification = "left", 
+        legend.margin = margin(t = -8), 
+        plot.margin = unit(c(1, 0, 0, 0), "lines"), 
+        axis.title.y = element_text(size = 7, family = "Lato", colour = "green"), 
+        axis.text.x = element_text(size = 8, family = "Lato", colour = "blue"), 
+        axis.text.y = element_text(size = 8, family = "Lato", colour = "orange"), 
+        legend.text = element_text(size = 7, family = "Lato", colour = "yellow"), 
+        legend.title = element_text(size = 7, family = "Lato", colour = "purple"),
+        panel.border = element_blank(), 
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(), 
+        axis.line = element_line(colour = "black")) +
+  guides(fill = guide_legend(title = "Example Title Here"))
 
-#Without custom parameters applied
+```
 
-ggplot(df_fig2_long, aes(x= Category, y = Value, fill = Series)) +
-  geom_bar(stat = "identity") + 
-  labs(y = "Percent", x = "", fill = "")
+:::
+
+Below you will see how to make positional changes to the charts. More information about the specifics of text labels can be found in [ggplot2's documentation](https://ggplot2-book.org/annotations#sec-text-labels). Below I've adjusted the original numbers to show how changes affect the text.
+
+Note that <code>vjust</code> numbers are counterintuitive. A negative number moves the label up, and a positive number moves the label down. 
+
+Also note that <code>plot.margin</code> increases or decreases the margin around the whole plot, which is not to be confused with <code>legend.margin</code>, which changes the margin of the legend only. 
+
+::: {.panel-tabset}
+
+## Code
+```{r ggplot-chart-code-legend-3}
+#| echo: true
+#| eval: false
+#| code-overflow: scroll
+#| code-line-numbers: true
+#| source-line-numbers: "7,8,16-19"
+
+ggplot(df_fig2_long, aes(x = Category, y = Value, fill = Series)) +
+  geom_bar(stat = "identity", position = position_dodge()) +
+  labs(y = "Percent", x = "", fill = "") +
+  scale_fill_discrete(labels = c('Current funding and participation', 
+  'Full funding and participation in SSI, SNAP, WIC, TANF, CCDF, LIHEAP, and housing')) +
+  geom_text(aes(label = decimal_to_percentage(Value)), 
+            vjust = -2, 
+            position = identity(),
+            size = 5,
+            color = "red", 
+            family = "Lato") +
+  scale_y_continuous(expand = expansion(mult = 0), 
+                     limits = c(0, max(df_fig2_long$Value) * 1.5), 
+                     labels = decimal_to_percentage) +
+  theme_bw() +
+  theme(legend.position = "bottom", 
+        legend.justification = "right", 
+        legend.margin = margin(t = 8), 
+        plot.margin = unit(c(2, 2, 2, 2), "lines"), 
+        axis.title.y = element_text(size = 7, family = "Lato", colour = "green"), 
+        axis.text.x = element_text(size = 8, family = "Lato", colour = "blue"), 
+        axis.text.y = element_text(size = 8, family = "Lato", colour = "orange"), 
+        legend.text = element_text(size = 7, family = "Lato", colour = "yellow"), 
+        legend.title = element_text(size = 7, family = "Lato", colour = "purple"), 
+        panel.border = element_blank(), 
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(), 
+        axis.line = element_line(colour = "black")) +
+  guides(fill = guide_legend(title = ""))
+
+```
+
+## Figure
+```{r ggplot-chart-legend-3}
+
+ggplot(df_fig2_long, aes(x = Category, y = Value, fill = Series)) +
+  geom_bar(stat = "identity", position = position_dodge()) +
+  labs(y = "Percent", x = "", fill = "") +
+  scale_fill_discrete(labels = c('Current funding and participation', 
+  'Full funding and participation in SSI, SNAP, WIC, TANF, CCDF, LIHEAP, and housing')) +
+  geom_text(aes(label = decimal_to_percentage(Value)), 
+            vjust = -2, 
+            position = position_identity(),
+            size = 2,
+            color = "black", 
+            family = "Lato") +
+  scale_y_continuous(expand = expansion(mult = 0), 
+                     limits = c(0, max(df_fig2_long$Value) * 1.5), 
+                     labels = decimal_to_percentage) +
+  theme_bw() +
+  theme(legend.position = "bottom", 
+        legend.justification = "right", 
+        legend.margin = margin(t = 8), 
+        plot.margin = unit(c(2, 2, 2, 2), "lines"), 
+        axis.title.y = element_text(size = 7, family = "Lato", colour = "black"), 
+        axis.text.x = element_text(size = 8, family = "Lato", colour = "black"), 
+        axis.text.y = element_text(size = 8, family = "Lato", colour = "black"), 
+        legend.text = element_text(size = 7, family = "Lato", colour = "black"), 
+        legend.title = element_text(size = 7, family = "Lato", colour = "black"),
+        panel.border = element_blank(), 
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(), 
+        axis.line = element_line(colour = "black")) +
+  guides(fill = guide_legend(title = ""))
+
+```
+
+:::
+
+#### Axes and grid lines
+
+See the code below to change the axis positioning. In this example, the changes are being made relative to the y axis using <code>scale_y_continuous</code>, but the same principles apply to the x axis using <code>scale_x_continuous</code>. 
+
+The example below also shows the default values for the chart (as if no parameters were set). The original chart at the top with the correct parameters set uses <code>max(df_fig2_long$Value) * 1.5</code> to provide head space above the bars in the chart. In the example below, <code>expand = expansion(mult = 0)</code> has been removed, which is why the bars look like they are floating. See documentation on ggplot2 expansion parameters [here](https://ggplot2.tidyverse.org/reference/expansion.html).
+
+See the panel and axis parameters at the end of the code block. <code>element_blank()</code> has been changed to <code>element_rect()</code> to show the differences, and <code>axis.line</code> has been changed to <code>element_blank()</code>.
+
+Lastly, see line 15. <code>theme_bw()</code> ensures there is no background color for the chart. If there's a gray background, most likely the code is missing this line. 
+
+::: {.panel-tabset}
+
+## Code
+```{r ggplot-chart-code-legend-4}
+#| echo: true
+#| eval: false
+#| code-overflow: scroll
+#| code-line-numbers: true
+#| source-line-numbers: "12-15,25-28"
+
+ggplot(df_fig2_long, aes(x = Category, y = Value, fill = Series)) +
+  geom_bar(stat = "identity", position = position_dodge()) +
+  labs(y = "Percent", x = "", fill = "") +
+  scale_fill_discrete(labels = c('Current funding and participation', 
+  'Full funding and participation in SSI, SNAP, WIC, TANF, CCDF, LIHEAP, and housing')) +
+  geom_text(aes(label = decimal_to_percentage(Value)), 
+            vjust = -0.5, 
+            position = position_dodge2(width = 0.7, padding = 0.5),
+            size = 5,
+            color = "red", 
+            family = "Lato") +
+  scale_y_continuous(expand = expansion(mult = 0),
+                     limits = c(0, max(df_fig2_long$Value) * 1.5), 
+                     labels = decimal_to_percentage) +
+  theme_bw() +
+  theme(legend.position = "top", 
+        legend.justification = "left", 
+        legend.margin = margin(t = -8), 
+        plot.margin = unit(c(1, 0, 0, 0), "lines"), 
+        axis.title.y = element_text(size = 7, family = "Lato", colour = "black"), 
+        axis.text.x = element_text(size = 8, family = "Lato", colour = "black"), 
+        axis.text.y = element_text(size = 8, family = "Lato", colour = "black"), 
+        legend.text = element_text(size = 7, family = "Lato", colour = "black"), 
+        legend.title = element_text(size = 7, family = "Lato", colour = "black"), 
+        panel.border = element_rect(colour = "red"), 
+        panel.grid.major = element_line(colour = "blue"),
+        panel.grid.minor = element_line(colour = "green"), 
+        axis.line = element_blank()) +
+  guides(fill = guide_legend(title = ""))
+
+```
+
+## Figure
+```{r ggplot-chart-legend-4}
+
+ggplot(df_fig2_long, aes(x = Category, y = Value, fill = Series)) +
+  geom_bar(stat = "identity", position = position_dodge()) +
+  labs(y = "Percent", x = "", fill = "") +
+  scale_fill_discrete(labels = c('Current funding and participation', 
+  'Full funding and participation in SSI, SNAP, WIC, TANF, CCDF, LIHEAP, and housing')) +
+  geom_text(aes(label = decimal_to_percentage(Value)), 
+            vjust = -0.5, 
+            position = position_dodge2(width = 0.7, padding = 0.5),
+            size = 2,
+            color = "black", 
+            family = "Lato") +
+  scale_y_continuous(expand = expansion(mult = 0),
+                     limits = c(0, max(df_fig2_long$Value) * 1.5), 
+                     labels = decimal_to_percentage) +
+  theme_bw() +
+  theme(legend.position = "top", 
+        legend.justification = "left", 
+        legend.margin = margin(t = -8), 
+        plot.margin = unit(c(1, 0, 0, 0), "lines"), 
+                axis.title.y = element_text(size = 7, family = "Lato", colour = "black"), 
+        axis.text.x = element_text(size = 8, family = "Lato", colour = "black"), 
+        axis.text.y = element_text(size = 8, family = "Lato", colour = "black"), 
+        legend.text = element_text(size = 7, family = "Lato", colour = "black"), 
+        legend.title = element_text(size = 7, family = "Lato", colour = "black"), 
+        panel.border = element_rect(colour = "red"), 
+        panel.grid.major = element_line(colour = "blue"),
+        panel.grid.minor = element_line(colour = "green"), 
+        axis.line = element_blank()) +
+  guides(fill = guide_legend(title = ""))
+
 ```
 
 :::
 
 
-#### Color changes for data labels, legend text, and axis text
-
-To change data labels,
-
 #### Low-quality exported images
 
-If the images in a report generated in R are not high-enough quality for print publications, you can change the parameters by using the following code:
+If the images in a report generated in R are not high-enough quality for print publications, you can change the parameters by using the following code underneath the ggplot2 code. Make sure you change the plot name to the correct plot name or use <code>plot = last_plot()</code> instead.
 
+The image will save in the same folder as the R file you are working in.
 
-#### Positioning of legend
+```{r chart-save-code}
+#| echo: true
+#| eval: false
+#| code-overflow: wrap
 
-#### Removing grid lines
+ggsave("plot-name.png", plot = plot_name, width = 8.25, units = "in", dpi = 300)
 
+```
 
-### Providing the Researchers with an Updated Figure
-
-One you have made the appropriate changes, you can export the file using the following code. Make sure the resolution is good enough for print publications (the resolution below should work).
 
 
 

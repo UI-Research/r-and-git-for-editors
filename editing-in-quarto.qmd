@@ -11,10 +11,16 @@ execute:
   code-overflow: wrap
 ---
 
-# Editing in Quarto
+# Editing in Quarto and RMarkdown
 
 ### Common Quarto Syntax
 
 ### Editing Text in Quarto
+
+#### How to Identify Changes in GitHub for Subsequent Edits
+
+### Common RMarkdown Syntax
+
+### Editing Text in RMarkdown
 
 #### How to Identify Changes in GitHub for Subsequent Edits
