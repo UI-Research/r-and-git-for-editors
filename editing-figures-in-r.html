@@ -200,12 +200,6 @@ background-size: cover;
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./editing-in-r-markdown.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Editing in R Markdown</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./editing-zotero-citations-in-r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Editing Zotero Citations in R</span></a>
   </div>
@@ -231,7 +225,6 @@ background-size: cover;
   <li><a href="#opening-the-r-project" id="toc-opening-the-r-project" class="nav-link" data-scroll-target="#opening-the-r-project">Opening the R Project</a></li>
   <li><a href="#what-to-look-for-in-the-file" id="toc-what-to-look-for-in-the-file" class="nav-link" data-scroll-target="#what-to-look-for-in-the-file">What to Look for in the File</a></li>
   <li><a href="#common-changes-to-figures" id="toc-common-changes-to-figures" class="nav-link" data-scroll-target="#common-changes-to-figures">Common Changes to Figures</a></li>
-  <li><a href="#providing-the-researchers-with-an-updated-figure" id="toc-providing-the-researchers-with-an-updated-figure" class="nav-link" data-scroll-target="#providing-the-researchers-with-an-updated-figure">Providing the Researchers with an Updated Figure</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -245,7 +238,7 @@ background-size: cover;
 
 <section id="editing-figures-in-r" class="level1">
 <h1>Editing Figures in R</h1>
-<p>Editing figures in R for Urban style can be done quite easily if you know what to look for. The first step is to ask the researcher for the r files associated with the project in a folder (usually an r project folder). The preferred method is opening a new branch on a GitHub repo. For more information on how to make a new branch on an existing repo, see the <a href="./using-github.html">Using GitHub</a> page. If the researcher only has a local folder saved, you can ask them to send you the zipped project folder via email.</p>
+<p>Editing figures in R for Urban style can be done quite easily if you know what to look for. The first step is to ask the researcher for the R files associated with the project in a folder (usually an R project folder). The preferred method is opening a new branch on a GitHub repo. For more information on how to make a new branch on an existing repo, see the <a href="./using-github.html">Using GitHub</a> page. If the researcher only has a local folder saved, you can ask them to send you the zipped project folder via email.</p>
 <p>Before you begin, make sure the researcher has used the <a href="https://urbaninstitute.github.io/urbnthemes/">urbnthemes ggplot2 package</a> for generating the figures.</p>
 <section id="opening-the-r-project" class="level3">
 <h3 class="anchored" data-anchor-id="opening-the-r-project">Opening the R Project</h3>
@@ -307,7 +300,7 @@ Figure&nbsp;1
 <span id="cb2-2"><a href="#cb2-2"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="fu">position_dodge</span>()) <span class="sc">+</span></span>
 <span id="cb2-3"><a href="#cb2-3"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Percent"</span>, <span class="at">x =</span> <span class="st">""</span>, <span class="at">fill =</span> <span class="st">""</span>) <span class="sc">+</span></span>
 <span id="cb2-4"><a href="#cb2-4"></a>  <span class="fu">scale_fill_discrete</span>(<span class="at">labels =</span> <span class="fu">c</span>(<span class="st">'Current funding and participation'</span>, </span>
-<span id="cb2-5"><a href="#cb2-5"></a>                                 <span class="st">'Full funding and participation in SSI, SNAP, WIC, TANF, CCDF, LIHEAP, and housing'</span>)) <span class="sc">+</span></span>
+<span id="cb2-5"><a href="#cb2-5"></a>  <span class="st">'Full funding and participation in SSI, SNAP, WIC, TANF, CCDF, LIHEAP, and housing'</span>)) <span class="sc">+</span></span>
 <span id="cb2-6"><a href="#cb2-6"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">decimal_to_percentage</span>(Value)), </span>
 <span id="cb2-7"><a href="#cb2-7"></a>            <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.5</span>, </span>
 <span id="cb2-8"><a href="#cb2-8"></a>            <span class="at">position =</span> <span class="fu">position_dodge2</span>(<span class="at">width =</span> <span class="fl">0.7</span>, <span class="at">padding =</span> <span class="fl">0.5</span>),</span>
@@ -349,17 +342,13 @@ Figure&nbsp;1
 <p>Below you will find common changes for figures and how to make those changes.</p>
 <section id="capitalization-and-hypenation-changes-in-data-labels-legend-text-and-axis-text" class="level4">
 <h4 class="anchored" data-anchor-id="capitalization-and-hypenation-changes-in-data-labels-legend-text-and-axis-text">Capitalization and hypenation changes in data labels, legend text, and axis text</h4>
-<p>To change capitalization, hyphenation, or other text changes in legend and axis text, look at the example code again, this time with the proper text highlighted.</p>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">Legend text</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">Figure 2</a></li></ul>
-<div class="tab-content">
-<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
-<div class="cell" data-source-line-numbers="2,6-7">
-<div class="sourceCode cell-code" id="cb4" data-source-line-numbers="2,6-7" data-code-line-numbers="2,6-7"><pre class="sourceCode numberSource r code-overflow-scroll number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">ggplot</span>(df_fig2_long, <span class="fu">aes</span>(<span class="at">x =</span> Category, <span class="at">y =</span> Value, <span class="at">fill =</span> Series)) <span class="sc">+</span></span>
+<p>To change capitalization, hyphenation, or other text changes in legend and axis text, look at the example code again, this time with the relevant text highlighted. If some of the chart text gets pulled in from the dataset itself, ask the researchers to make the required changes.</p>
+<div class="cell" data-source-line-numbers="3-5">
+<div class="sourceCode cell-code" id="cb4" data-source-line-numbers="3-5" data-code-line-numbers="3-5"><pre class="sourceCode numberSource r code-overflow-scroll number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">ggplot</span>(df_fig2_long, <span class="fu">aes</span>(<span class="at">x =</span> Category, <span class="at">y =</span> Value, <span class="at">fill =</span> Series)) <span class="sc">+</span></span>
 <span id="cb4-2"><a href="#cb4-2"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="fu">position_dodge</span>()) <span class="sc">+</span></span>
 <span id="cb4-3"><a href="#cb4-3"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Percent"</span>, <span class="at">x =</span> <span class="st">""</span>, <span class="at">fill =</span> <span class="st">""</span>) <span class="sc">+</span></span>
 <span id="cb4-4"><a href="#cb4-4"></a>  <span class="fu">scale_fill_discrete</span>(<span class="at">labels =</span> <span class="fu">c</span>(<span class="st">'Current funding and participation'</span>, </span>
-<span id="cb4-5"><a href="#cb4-5"></a>                                 <span class="st">'Full funding and participation in SSI, SNAP, WIC, TANF, CCDF, LIHEAP, and housing'</span>)) <span class="sc">+</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a>  <span class="st">'Full funding and participation in SSI, SNAP, WIC, TANF, CCDF, LIHEAP, and housing'</span>)) <span class="sc">+</span></span>
 <span id="cb4-6"><a href="#cb4-6"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">decimal_to_percentage</span>(Value)), </span>
 <span id="cb4-7"><a href="#cb4-7"></a>            <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.5</span>, </span>
 <span id="cb4-8"><a href="#cb4-8"></a>            <span class="at">position =</span> <span class="fu">position_dodge2</span>(<span class="at">width =</span> <span class="fl">0.7</span>, <span class="at">padding =</span> <span class="fl">0.5</span>),</span>
@@ -385,6 +374,47 @@ Figure&nbsp;1
 <span id="cb4-28"><a href="#cb4-28"></a>        <span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">colour =</span> <span class="st">"black"</span>)) <span class="sc">+</span></span>
 <span id="cb4-29"><a href="#cb4-29"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_legend</span>(<span class="at">title =</span> <span class="st">""</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>You can change the text for <code>labs(y = “Y AXIS LABEL HERE”, x = “X AXIS LABEL HERE”, fill = ““)</code> and <code>labels = c(”SERIES 1 LABEL”, “SERIES 2 LABEL”)</code></p>
+</section>
+<section id="color-and-position-changes-for-chart-text" class="level4">
+<h4 class="anchored" data-anchor-id="color-and-position-changes-for-chart-text">Color and position changes for chart text</h4>
+<p>Highlighted below are lines of code associated with data labels and axis text. If you need to change the styling of those, look for similar lines of code. The text has been converted to different colors to make the changes more apparent. You can also use hex codes in place of colors (especially useful for Urban-sepcific colors) like this <code>“#1696d2”</code>. Notice in the same lines of code, you can change the font style and font size.</p>
+<p>Also notice that the last line of code is highlighted to show the addition of a legend title.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">Code</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">Figure</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<div class="cell" data-source-line-numbers="9-11,20-24,29">
+<div class="sourceCode cell-code" id="cb5" data-source-line-numbers="9-11,20-24,29" data-code-line-numbers="9-11,20-24,29"><pre class="sourceCode numberSource r code-overflow-scroll number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">ggplot</span>(df_fig2_long, <span class="fu">aes</span>(<span class="at">x =</span> Category, <span class="at">y =</span> Value, <span class="at">fill =</span> Series)) <span class="sc">+</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="fu">position_dodge</span>()) <span class="sc">+</span></span>
+<span id="cb5-3"><a href="#cb5-3"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Percent"</span>, <span class="at">x =</span> <span class="st">""</span>, <span class="at">fill =</span> <span class="st">""</span>) <span class="sc">+</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a>  <span class="fu">scale_fill_discrete</span>(<span class="at">labels =</span> <span class="fu">c</span>(<span class="st">'Current funding and participation'</span>, </span>
+<span id="cb5-5"><a href="#cb5-5"></a>  <span class="st">'Full funding and participation in SSI, SNAP, WIC, TANF, CCDF, LIHEAP, and housing'</span>)) <span class="sc">+</span></span>
+<span id="cb5-6"><a href="#cb5-6"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">decimal_to_percentage</span>(Value)), </span>
+<span id="cb5-7"><a href="#cb5-7"></a>            <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.5</span>, </span>
+<span id="cb5-8"><a href="#cb5-8"></a>            <span class="at">position =</span> <span class="fu">position_dodge2</span>(<span class="at">width =</span> <span class="fl">0.7</span>, <span class="at">padding =</span> <span class="fl">0.5</span>),</span>
+<span id="cb5-9"><a href="#cb5-9"></a>            <span class="at">size =</span> <span class="dv">5</span>,</span>
+<span id="cb5-10"><a href="#cb5-10"></a>            <span class="at">color =</span> <span class="st">"red"</span>, </span>
+<span id="cb5-11"><a href="#cb5-11"></a>            <span class="at">family =</span> <span class="st">"Lato"</span>) <span class="sc">+</span></span>
+<span id="cb5-12"><a href="#cb5-12"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">expand =</span> <span class="fu">expansion</span>(<span class="at">mult =</span> <span class="dv">0</span>), </span>
+<span id="cb5-13"><a href="#cb5-13"></a>                     <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fu">max</span>(df_fig2_long<span class="sc">$</span>Value) <span class="sc">*</span> <span class="fl">1.5</span>), </span>
+<span id="cb5-14"><a href="#cb5-14"></a>                     <span class="at">labels =</span> decimal_to_percentage) <span class="sc">+</span></span>
+<span id="cb5-15"><a href="#cb5-15"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb5-16"><a href="#cb5-16"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"top"</span>, </span>
+<span id="cb5-17"><a href="#cb5-17"></a>        <span class="at">legend.justification =</span> <span class="st">"left"</span>, </span>
+<span id="cb5-18"><a href="#cb5-18"></a>        <span class="at">legend.margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="sc">-</span><span class="dv">8</span>), </span>
+<span id="cb5-19"><a href="#cb5-19"></a>        <span class="at">plot.margin =</span> <span class="fu">unit</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), <span class="st">"lines"</span>), </span>
+<span id="cb5-20"><a href="#cb5-20"></a>        <span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">7</span>, <span class="at">family =</span> <span class="st">"Lato"</span>, <span class="at">colour =</span> <span class="st">"green"</span>), </span>
+<span id="cb5-21"><a href="#cb5-21"></a>        <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">8</span>, <span class="at">family =</span> <span class="st">"Lato"</span>, <span class="at">colour =</span> <span class="st">"blue"</span>), </span>
+<span id="cb5-22"><a href="#cb5-22"></a>        <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">8</span>, <span class="at">family =</span> <span class="st">"Lato"</span>, <span class="at">colour =</span> <span class="st">"orange"</span>), </span>
+<span id="cb5-23"><a href="#cb5-23"></a>        <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">7</span>, <span class="at">family =</span> <span class="st">"Lato"</span>, <span class="at">colour =</span> <span class="st">"yellow"</span>), </span>
+<span id="cb5-24"><a href="#cb5-24"></a>        <span class="at">legend.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">7</span>, <span class="at">family =</span> <span class="st">"Lato"</span>, <span class="at">colour =</span> <span class="st">"purple"</span>), </span>
+<span id="cb5-25"><a href="#cb5-25"></a>        <span class="at">panel.border =</span> <span class="fu">element_blank</span>(), </span>
+<span id="cb5-26"><a href="#cb5-26"></a>        <span class="at">panel.grid.major =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb5-27"><a href="#cb5-27"></a>        <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(), </span>
+<span id="cb5-28"><a href="#cb5-28"></a>        <span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">colour =</span> <span class="st">"black"</span>)) <span class="sc">+</span></span>
+<span id="cb5-29"><a href="#cb5-29"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_legend</span>(<span class="at">title =</span> <span class="st">"Example Title Here"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 <div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
 <div class="cell">
@@ -399,27 +429,125 @@ Figure&nbsp;1
 </div>
 </div>
 </div>
+<p>Below you will see how to make positional changes to the charts. More information about the specifics of text labels can be found in <a href="https://ggplot2-book.org/annotations#sec-text-labels">ggplot2’s documentation</a>. Below I’ve adjusted the original numbers to show how changes affect the text.</p>
+<p>Note that <code>vjust</code> numbers are counterintuitive. A negative number moves the label up, and a positive number moves the label down.</p>
+<p>Also note that <code>plot.margin</code> increases or decreases the margin around the whole plot, which is not to be confused with <code>legend.margin</code>, which changes the margin of the legend only.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true">Code</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false">Figure</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
+<div class="cell" data-source-line-numbers="7,8,16-19">
+<div class="sourceCode cell-code" id="cb6" data-source-line-numbers="7,8,16-19" data-code-line-numbers="7,8,16-19"><pre class="sourceCode numberSource r code-overflow-scroll number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">ggplot</span>(df_fig2_long, <span class="fu">aes</span>(<span class="at">x =</span> Category, <span class="at">y =</span> Value, <span class="at">fill =</span> Series)) <span class="sc">+</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="fu">position_dodge</span>()) <span class="sc">+</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Percent"</span>, <span class="at">x =</span> <span class="st">""</span>, <span class="at">fill =</span> <span class="st">""</span>) <span class="sc">+</span></span>
+<span id="cb6-4"><a href="#cb6-4"></a>  <span class="fu">scale_fill_discrete</span>(<span class="at">labels =</span> <span class="fu">c</span>(<span class="st">'Current funding and participation'</span>, </span>
+<span id="cb6-5"><a href="#cb6-5"></a>  <span class="st">'Full funding and participation in SSI, SNAP, WIC, TANF, CCDF, LIHEAP, and housing'</span>)) <span class="sc">+</span></span>
+<span id="cb6-6"><a href="#cb6-6"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">decimal_to_percentage</span>(Value)), </span>
+<span id="cb6-7"><a href="#cb6-7"></a>            <span class="at">vjust =</span> <span class="sc">-</span><span class="dv">2</span>, </span>
+<span id="cb6-8"><a href="#cb6-8"></a>            <span class="at">position =</span> <span class="fu">identity</span>(),</span>
+<span id="cb6-9"><a href="#cb6-9"></a>            <span class="at">size =</span> <span class="dv">5</span>,</span>
+<span id="cb6-10"><a href="#cb6-10"></a>            <span class="at">color =</span> <span class="st">"red"</span>, </span>
+<span id="cb6-11"><a href="#cb6-11"></a>            <span class="at">family =</span> <span class="st">"Lato"</span>) <span class="sc">+</span></span>
+<span id="cb6-12"><a href="#cb6-12"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">expand =</span> <span class="fu">expansion</span>(<span class="at">mult =</span> <span class="dv">0</span>), </span>
+<span id="cb6-13"><a href="#cb6-13"></a>                     <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fu">max</span>(df_fig2_long<span class="sc">$</span>Value) <span class="sc">*</span> <span class="fl">1.5</span>), </span>
+<span id="cb6-14"><a href="#cb6-14"></a>                     <span class="at">labels =</span> decimal_to_percentage) <span class="sc">+</span></span>
+<span id="cb6-15"><a href="#cb6-15"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb6-16"><a href="#cb6-16"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>, </span>
+<span id="cb6-17"><a href="#cb6-17"></a>        <span class="at">legend.justification =</span> <span class="st">"right"</span>, </span>
+<span id="cb6-18"><a href="#cb6-18"></a>        <span class="at">legend.margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="dv">8</span>), </span>
+<span id="cb6-19"><a href="#cb6-19"></a>        <span class="at">plot.margin =</span> <span class="fu">unit</span>(<span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>), <span class="st">"lines"</span>), </span>
+<span id="cb6-20"><a href="#cb6-20"></a>        <span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">7</span>, <span class="at">family =</span> <span class="st">"Lato"</span>, <span class="at">colour =</span> <span class="st">"green"</span>), </span>
+<span id="cb6-21"><a href="#cb6-21"></a>        <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">8</span>, <span class="at">family =</span> <span class="st">"Lato"</span>, <span class="at">colour =</span> <span class="st">"blue"</span>), </span>
+<span id="cb6-22"><a href="#cb6-22"></a>        <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">8</span>, <span class="at">family =</span> <span class="st">"Lato"</span>, <span class="at">colour =</span> <span class="st">"orange"</span>), </span>
+<span id="cb6-23"><a href="#cb6-23"></a>        <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">7</span>, <span class="at">family =</span> <span class="st">"Lato"</span>, <span class="at">colour =</span> <span class="st">"yellow"</span>), </span>
+<span id="cb6-24"><a href="#cb6-24"></a>        <span class="at">legend.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">7</span>, <span class="at">family =</span> <span class="st">"Lato"</span>, <span class="at">colour =</span> <span class="st">"purple"</span>), </span>
+<span id="cb6-25"><a href="#cb6-25"></a>        <span class="at">panel.border =</span> <span class="fu">element_blank</span>(), </span>
+<span id="cb6-26"><a href="#cb6-26"></a>        <span class="at">panel.grid.major =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb6-27"><a href="#cb6-27"></a>        <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(), </span>
+<span id="cb6-28"><a href="#cb6-28"></a>        <span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">colour =</span> <span class="st">"black"</span>)) <span class="sc">+</span></span>
+<span id="cb6-29"><a href="#cb6-29"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_legend</span>(<span class="at">title =</span> <span class="st">""</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="editing-figures-in-r_files/figure-html/ggplot-chart-legend-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
-<section id="color-changes-for-data-labels-legend-text-and-axis-text" class="level4">
-<h4 class="anchored" data-anchor-id="color-changes-for-data-labels-legend-text-and-axis-text">Color changes for data labels, legend text, and axis text</h4>
-<p>To change data labels,</p>
+<section id="axes-and-grid-lines" class="level4">
+<h4 class="anchored" data-anchor-id="axes-and-grid-lines">Axes and grid lines</h4>
+<p>See the code below to change the axis positioning. In this example, the changes are being made relative to the y axis using <code>scale_y_continuous</code>, but the same principles apply to the x axis using <code>scale_x_continuous</code>.</p>
+<p>The example below also shows the default values for the chart (as if no parameters were set). The original chart at the top with the correct parameters set uses <code>max(df_fig2_long$Value) * 1.5</code> to provide head space above the bars in the chart. In the example below, <code>expand = expansion(mult = 0)</code> has been removed, which is why the bars look like they are floating. See documentation on ggplot2 expansion parameters <a href="https://ggplot2.tidyverse.org/reference/expansion.html">here</a>.</p>
+<p>See the panel and axis parameters at the end of the code block. <code>element_blank()</code> has been changed to <code>element_rect()</code> to show the differences, and <code>axis.line</code> has been changed to <code>element_blank()</code>.</p>
+<p>Lastly, see line 15. <code>theme_bw()</code> ensures there is no background color for the chart. If there’s a gray background, most likely the code is missing this line.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true">Code</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false">Figure</a></li></ul>
+<div class="tab-content">
+<div id="tabset-5-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-5-1-tab">
+<div class="cell" data-source-line-numbers="12-15,25-28">
+<div class="sourceCode cell-code" id="cb7" data-source-line-numbers="12-15,25-28" data-code-line-numbers="12-15,25-28"><pre class="sourceCode numberSource r code-overflow-scroll number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">ggplot</span>(df_fig2_long, <span class="fu">aes</span>(<span class="at">x =</span> Category, <span class="at">y =</span> Value, <span class="at">fill =</span> Series)) <span class="sc">+</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="fu">position_dodge</span>()) <span class="sc">+</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Percent"</span>, <span class="at">x =</span> <span class="st">""</span>, <span class="at">fill =</span> <span class="st">""</span>) <span class="sc">+</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a>  <span class="fu">scale_fill_discrete</span>(<span class="at">labels =</span> <span class="fu">c</span>(<span class="st">'Current funding and participation'</span>, </span>
+<span id="cb7-5"><a href="#cb7-5"></a>  <span class="st">'Full funding and participation in SSI, SNAP, WIC, TANF, CCDF, LIHEAP, and housing'</span>)) <span class="sc">+</span></span>
+<span id="cb7-6"><a href="#cb7-6"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">decimal_to_percentage</span>(Value)), </span>
+<span id="cb7-7"><a href="#cb7-7"></a>            <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.5</span>, </span>
+<span id="cb7-8"><a href="#cb7-8"></a>            <span class="at">position =</span> <span class="fu">position_dodge2</span>(<span class="at">width =</span> <span class="fl">0.7</span>, <span class="at">padding =</span> <span class="fl">0.5</span>),</span>
+<span id="cb7-9"><a href="#cb7-9"></a>            <span class="at">size =</span> <span class="dv">5</span>,</span>
+<span id="cb7-10"><a href="#cb7-10"></a>            <span class="at">color =</span> <span class="st">"red"</span>, </span>
+<span id="cb7-11"><a href="#cb7-11"></a>            <span class="at">family =</span> <span class="st">"Lato"</span>) <span class="sc">+</span></span>
+<span id="cb7-12"><a href="#cb7-12"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">expand =</span> <span class="fu">expansion</span>(<span class="at">mult =</span> <span class="dv">0</span>),</span>
+<span id="cb7-13"><a href="#cb7-13"></a>                     <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fu">max</span>(df_fig2_long<span class="sc">$</span>Value) <span class="sc">*</span> <span class="fl">1.5</span>), </span>
+<span id="cb7-14"><a href="#cb7-14"></a>                     <span class="at">labels =</span> decimal_to_percentage) <span class="sc">+</span></span>
+<span id="cb7-15"><a href="#cb7-15"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb7-16"><a href="#cb7-16"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"top"</span>, </span>
+<span id="cb7-17"><a href="#cb7-17"></a>        <span class="at">legend.justification =</span> <span class="st">"left"</span>, </span>
+<span id="cb7-18"><a href="#cb7-18"></a>        <span class="at">legend.margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="sc">-</span><span class="dv">8</span>), </span>
+<span id="cb7-19"><a href="#cb7-19"></a>        <span class="at">plot.margin =</span> <span class="fu">unit</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), <span class="st">"lines"</span>), </span>
+<span id="cb7-20"><a href="#cb7-20"></a>        <span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">7</span>, <span class="at">family =</span> <span class="st">"Lato"</span>, <span class="at">colour =</span> <span class="st">"black"</span>), </span>
+<span id="cb7-21"><a href="#cb7-21"></a>        <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">8</span>, <span class="at">family =</span> <span class="st">"Lato"</span>, <span class="at">colour =</span> <span class="st">"black"</span>), </span>
+<span id="cb7-22"><a href="#cb7-22"></a>        <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">8</span>, <span class="at">family =</span> <span class="st">"Lato"</span>, <span class="at">colour =</span> <span class="st">"black"</span>), </span>
+<span id="cb7-23"><a href="#cb7-23"></a>        <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">7</span>, <span class="at">family =</span> <span class="st">"Lato"</span>, <span class="at">colour =</span> <span class="st">"black"</span>), </span>
+<span id="cb7-24"><a href="#cb7-24"></a>        <span class="at">legend.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">7</span>, <span class="at">family =</span> <span class="st">"Lato"</span>, <span class="at">colour =</span> <span class="st">"black"</span>), </span>
+<span id="cb7-25"><a href="#cb7-25"></a>        <span class="at">panel.border =</span> <span class="fu">element_rect</span>(<span class="at">colour =</span> <span class="st">"red"</span>), </span>
+<span id="cb7-26"><a href="#cb7-26"></a>        <span class="at">panel.grid.major =</span> <span class="fu">element_line</span>(<span class="at">colour =</span> <span class="st">"blue"</span>),</span>
+<span id="cb7-27"><a href="#cb7-27"></a>        <span class="at">panel.grid.minor =</span> <span class="fu">element_line</span>(<span class="at">colour =</span> <span class="st">"green"</span>), </span>
+<span id="cb7-28"><a href="#cb7-28"></a>        <span class="at">axis.line =</span> <span class="fu">element_blank</span>()) <span class="sc">+</span></span>
+<span id="cb7-29"><a href="#cb7-29"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_legend</span>(<span class="at">title =</span> <span class="st">""</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-5-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-2-tab">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="editing-figures-in-r_files/figure-html/ggplot-chart-legend-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="low-quality-exported-images" class="level4">
 <h4 class="anchored" data-anchor-id="low-quality-exported-images">Low-quality exported images</h4>
-<p>If the images in a report generated in R are not high-enough quality for print publications, you can change the parameters by using the following code:</p>
-</section>
-<section id="positioning-of-legend" class="level4">
-<h4 class="anchored" data-anchor-id="positioning-of-legend">Positioning of legend</h4>
-</section>
-<section id="removing-grid-lines" class="level4">
-<h4 class="anchored" data-anchor-id="removing-grid-lines">Removing grid lines</h4>
-</section>
-</section>
-<section id="providing-the-researchers-with-an-updated-figure" class="level3">
-<h3 class="anchored" data-anchor-id="providing-the-researchers-with-an-updated-figure">Providing the Researchers with an Updated Figure</h3>
-<p>One you have made the appropriate changes, you can export the file using the following code. Make sure the resolution is good enough for print publications (the resolution below should work).</p>
+<p>If the images in a report generated in R are not high-enough quality for print publications, you can change the parameters by using the following code underneath the ggplot2 code. Make sure you change the plot name to the correct plot name or use <code>plot = last_plot()</code> instead.</p>
+<p>The image will save in the same folder as the R file you are working in.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-overflow-wrap code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"plot-name.png"</span>, <span class="at">plot =</span> plot_name, <span class="at">width =</span> <span class="fl">8.25</span>, <span class="at">units =</span> <span class="st">"in"</span>, <span class="at">dpi =</span> <span class="dv">300</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 
 
+</section>
 </section>
 </section>
 
