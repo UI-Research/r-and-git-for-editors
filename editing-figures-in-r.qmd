@@ -442,8 +442,8 @@ ggplot(df_fig2_long, aes(x = Category, y = Value, fill = Series)) +
             size = 5,
             color = "red", 
             family = "Lato") +
-  scale_y_continuous(expand = expansion(mult = 0),
-                     limits = c(0, max(df_fig2_long$Value) * 1.5), 
+  scale_y_continuous(
+                     limits = c(0, max(df_fig2_long$Value) * 1), 
                      labels = decimal_to_percentage) +
   theme_bw() +
   theme(legend.position = "top", 
@@ -477,8 +477,8 @@ ggplot(df_fig2_long, aes(x = Category, y = Value, fill = Series)) +
             size = 2,
             color = "black", 
             family = "Lato") +
-  scale_y_continuous(expand = expansion(mult = 0),
-                     limits = c(0, max(df_fig2_long$Value) * 1.5), 
+  scale_y_continuous(
+                     limits = c(0, max(df_fig2_long$Value) * 1), 
                      labels = decimal_to_percentage) +
   theme_bw() +
   theme(legend.position = "top", 
