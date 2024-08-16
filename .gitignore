@@ -3,3 +3,4 @@ config.R
 
 /.quarto/
 /_site/
+.Rproj.user
