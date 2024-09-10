@@ -9,6 +9,8 @@ title-block-banner-color: white
 execute:
   echo: false
   code-overflow: wrap
+editor_options: 
+  chunk_output_type: console
 ---
 
 # Editing Figures in R
@@ -42,15 +44,12 @@ Next, you will need to find the figure that requires editing or formatting work.
 #| echo: false
 
 library(tidyverse)
+library(urbnthemes)
 library(knitr)
 library(kableExtra)
-library(urbnthemes)
 library(grid)
 library(gridExtra)
 library(formattable)
-library(kableExtra)
-library(ggplot2)
-library(dplyr)
 library(scales)
 library(extrafont)
 
@@ -84,38 +83,35 @@ decimal_to_percentage <- function(x) {
 ::: {.panel-tabset}
 ## Figure 1
 ```{r ggplot-chart}
+set_urbn_defaults(style = "print")
 
 #With custom parameters applied
-
-ggplot(df_fig2_long, aes(x = Category, y = Value, fill = Series)) +
-  geom_bar(stat = "identity", position = position_dodge()) +
-  labs(y = "Percent", x = "", fill = "") +
-  scale_fill_discrete(labels = c('Current funding and participation', 
-  'Full funding and participation in SSI, SNAP, WIC, TANF, CCDF, LIHEAP, and housing')) +
-  geom_text(aes(label = decimal_to_percentage(Value)), 
-            vjust = -0.5, 
-            position = position_dodge2(width = 0.7, padding = 0.5),
-            size = 2,
-            color = "black", 
-            family = "Lato") +
-  scale_y_continuous(expand = expansion(mult = 0), 
-                     limits = c(0, max(df_fig2_long$Value) * 1.5), 
-                     labels = decimal_to_percentage) +
-  theme_bw() +
-  theme(legend.position = "top", 
-        legend.justification = "left", 
-        legend.margin = margin(t = -8), 
-        plot.margin = unit(c(1, 0, 0, 0), "lines"), 
-        axis.title.y = element_text(size = 7, family = "Lato", colour = "black"), 
-        axis.text.x = element_text(size = 8, family = "Lato", colour = "black"), 
-        axis.text.y = element_text(size = 8, family = "Lato", colour = "black"), 
-        legend.text = element_text(size = 7), 
-        legend.title = element_text(size = 7), 
-        panel.border = element_blank(), 
-        panel.grid.major = element_blank(),
-        panel.grid.minor = element_blank(), 
-        axis.line = element_line(colour = "black")) +
-  guides(fill = guide_legend(title = ""))
+df_fig2_long %>%
+  mutate(Value = Value / 100) %>%
+  mutate(
+    Series = case_match(
+      Series,
+        "Full.funding.and.participation.in.SSI..SNAP..WIC..TANF..CCDF..LIHEAP..and.housing." ~ "Full funding and participation in SSI, SNAP, WIC, TANF, CCDF, LIHEAP, and housing",
+      "Baseline" ~ "Current funding and participation"
+    )
+  ) %>%
+  ggplot(mapping = aes(x = Category, y = Value, fill = Series)) +
+  geom_col(position = position_dodge()) +
+  geom_text(
+    mapping = aes(label = label_percent(accuracy = 0.1)(Value)), 
+    vjust = -0.5, 
+    position = position_dodge2(width = 0.7, padding = 0.5),
+    size = 2
+  ) +
+  scale_y_continuous(
+    expand = expansion(mult = c(0, 0.3)),
+    labels = label_percent()
+  ) +
+  labs(
+    x = NULL, 
+    y = "Percent", 
+    fill = NULL
+  )
 
 ```
 
